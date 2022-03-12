@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "[link]:https://github.com/Ereh-Kim/TIL/blob/TIL/framework_study/react_study/React_TIL.files/0.%20React_setup.md \"React_setup_링크\"",
   "main": "server.js",
+  "proxy":"http://localhost:3000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
