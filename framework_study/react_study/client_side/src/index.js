@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //  기본적으로 react_활용시 필요로 하는 모듈들을 가져오는 코드
 
-import Image from 'images/meat.png'
-import Testing from 'components/component.jsx'
+import Image from './images/meat.png'
+import Testing from './components/component.jsx'
 // component의 jsx파일을 템플릿처럼 생각해서 가져올 수 있다
 // 단 가져올 시 jsx파일 표현식을 따라야되기 때문에, 
 // ReactDom.render( <변수로 가져온 jsx 템플릿/>, document.getElementById('root) )

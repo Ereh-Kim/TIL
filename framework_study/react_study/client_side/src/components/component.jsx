@@ -1,13 +1,14 @@
 import React from 'react';
-import js_file from 'components/Say_hi.js'
-import Extra_Dom from 'components/Extra_Dom.jsx'
+// import js_file from './Say_hi.js'
+import Extra_Dom from './Extra_Dom.jsx'
+import './Test.css'
 
 class Test extends React.Component{
 
     state = {
         property_1:1,
         property_2:2,
-        property_3:js_file,
+        // property_3:js_file
         property_4:Extra_Dom
     }
     // ㄴ> 이처럼 component 안에 property를 더할수도 있다.
@@ -25,7 +26,7 @@ class Test extends React.Component{
         <React.Fragment>
         <h1>Testing</h1>
 
-        <p className='Test_class'>Testing_className_section</p>
+        <p className="Test_class">Testing_className_section</p>
         
         <p>{this.state.property_1}</p>
         {/* ㄴ> 해당 componenet 내의 property에 해당되는 표현들(method||더 나아간 property)을 불러올 수 있다 */}
@@ -35,7 +36,7 @@ class Test extends React.Component{
         <Extra_Dom/>
         {/* ㄴ> 다른 jsx 파일을 import해서 추가할 수도 있다 */}
 
-        <script>{this.property_3}</script>
+        {/* <script>{this.property_3}</script> */}
         {/* ㄴ> js_file 또한 가져올 수 있다 ㄷㄷ */}
 
         </React.Fragment>
