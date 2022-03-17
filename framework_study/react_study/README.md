@@ -11,3 +11,9 @@
 
 ## 3. [About_React,React][3_link]  
 [3_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/framework_study/react_study/React_TIL.files/3.About_React%2CReactDom.md "About_React,ReactDom_링크"
+
+## 4. [About_React_Components][4_link]
+[4_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/framework_study/react_study/React_TIL.files/4.About_React_Components.md "About_React_Components_링크"
+
+## 5. [Import_Flies&Rendering_By_Component(jsx_file)][5_link]
+[5_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/framework_study/react_study/React_TIL.files/5.Import_Files%26Rendering_By_Component(jsx_file).md "Import_Flies&Rendering_By_Component(jsx_file)"
