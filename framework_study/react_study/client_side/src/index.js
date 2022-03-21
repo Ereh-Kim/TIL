@@ -30,8 +30,8 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 // React 모듈로써 가져온 변수 'React'는 react_element 생성시 대체로 필요로 함 => EX) jsx
 // 모듈이자 변수인 ReactDom 은 index.html의 연결다리로써, react_element를 직접 html 파일에 렌더링하는데 대체로 사용됨
 
-console.log(element3)
-console.log(Testing)
+// 
+
 
 
 ReactDOM.render(
