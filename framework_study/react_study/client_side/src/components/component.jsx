@@ -1,14 +1,14 @@
 import React from 'react';
-// import js_file from './Say_hi.js'
-import Extra_Dom from './Extra_Dom.jsx'
-import './Test.css'
+import js_file from 'components/Say_hi.js'
+import Extra_Dom from 'components/Extra_Dom.jsx'
+import 'components/Test.css'
 
 class Test extends React.Component{
 
     state = {
         property_1:1,
         property_2:2,
-        // property_3:js_file
+        property_3:js_file,
         property_4:Extra_Dom
     }
     // ㄴ> 이처럼 component 안에 property를 더할수도 있다.
