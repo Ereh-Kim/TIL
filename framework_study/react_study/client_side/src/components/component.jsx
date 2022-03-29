@@ -1,7 +1,7 @@
 import React from 'react';
-import js_file from 'components/Say_hi.js'
-import Extra_Dom from 'components/Extra_Dom.jsx'
-import 'components/Test.css'
+import js_file from 'components/Say_hi.js';
+import Extra_Dom from 'components/Extra_Dom.jsx';
+import 'components/Test.css';
 
 class Test extends React.Component{
 
@@ -56,7 +56,7 @@ class Test extends React.Component{
 
     render(){
 
-        console.log('props',this.props)
+        console.log('props', this.state.props)
 
         return (
         <React.Fragment>
