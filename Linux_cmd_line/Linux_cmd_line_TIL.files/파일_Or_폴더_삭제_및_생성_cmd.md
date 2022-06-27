@@ -14,6 +14,9 @@
     touch '생성될 파일에게 지어주는 이름'   
     
    
+>   touch 명령어를 쓰기 위해서는,   
+>   touch-cli module 을 install 해야 사용 가능하다   
+   
 * * *
    
    
