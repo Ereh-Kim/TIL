@@ -2,7 +2,9 @@
    
 **깃 배포에 있어서의 가장 기본적인 과정과**   
 **그에 필요로 하는 명령어들을 나열 및 정리할 것이다**   
-   
+
+
+* * *
 # 1. Git_Basic_Process   
    
 
@@ -44,14 +46,14 @@
 결과론적으로 그리고 완성되게   
    
 코드들이 우리가 지정한 저장소에 '저장'하게 된다   
+      
    
-   
-   
+* * *
 # 2. Git_Basic_Set_Up   
    
 
 ### 2.1. 코드들을 저장할   
-### ( git remote repository ) 원격 저장소 지정   
+### ( git remote repository ) 원격 저장소 지정(=추가)   
    
    
     git remote add '우리가 붙여주는 원격 저장소의 이름' '저장소 주소'   
@@ -63,7 +65,7 @@
     git remote   
    
    
-### 2.3. branch 생성   
+### 2.3. branch 생성(=추가)   
    
    
     git branch '우리가 만들 branch명'   
@@ -74,13 +76,15 @@
    
     git branch   
    
-   
+
+* * *   
 # 3. Git_Basic_add   
    
    
     git add .   
    
    
+* * *
 # 4. Git_Basic_commit   
    
    
@@ -95,6 +99,7 @@
 해당 명령어를 쓰면 add 와 commit 두 명령어를 같이 수행한다   
    
    
+* * *
 # 5. Git_Basic_push   
    
    
