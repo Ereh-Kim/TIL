@@ -9,5 +9,5 @@
 ## [2. npm,node 자체 버전 확인][2_link]
 [2_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/cmd_line_TIL/npm_cmd_line/npm_cmd_line_TIL/npm%20node_%EC%9E%90%EC%B2%B4_%EB%B2%84%EC%A0%84_%ED%99%95%EC%9D%B8_cmd.md
    
-## [3. pakcage.json 업데이트 및 생성 => npm init][3_link]
+## [3. pakcage.json 업데이트 및 생성][3_link]
 [3_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/cmd_line_TIL/npm_cmd_line/npm_cmd_line_TIL/package.json_%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8_%EB%B0%8F_%EC%83%9D%EC%84%B1_cmd.md
