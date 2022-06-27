@@ -8,3 +8,6 @@
 
 ## [2. 파일/폴더(을/를) 특정 디렉토리로 옮기기][2_link]
 [2_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/Linux_cmd_line/Linux_cmd_line_TIL.files/%ED%8C%8C%EC%9D%BC_Or_%ED%8F%B4%EB%8D%94_%ED%8A%B9%EC%A0%95_%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A1%9C_%EC%98%AE%EA%B8%B0%EA%B8%B0_cmd.md
+
+## [3. 터미널 로그 지울때/치울때][3_lin]
+[3_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/cmd_line_TIL/Linux_cmd_line/Linux_cmd_line_TIL.files/%ED%84%B0%EB%AF%B8%EB%84%90_%EB%A1%9C%EA%B7%B8_%EC%B9%98%EC%9A%B8%EB%95%8C_cmd.md
