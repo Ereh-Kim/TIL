@@ -1,9 +1,9 @@
 # 0. 순서 및 개요   
    
-* install express module   
-* express module 을 활용한 middleware 생성   
-* 생성한 middleware가 들을 port 지정   
-* 생성한 middleware의 활용( url에 따른 )      
+* 1.install express module   
+* 2.express module 을 활용한 middleware 생성   
+* 3.생성한 middleware가 들을 port 지정   
+* 4.생성한 middleware의 활용( url에 따른 )      
    
 * * *
 # 1. install express module   
