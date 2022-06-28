@@ -33,11 +33,11 @@
     // ㄴ> middleware 가 들을 port 변수를 정해주는 코드
 
     app.listen(port,()=>{
-
+        console.log('middleware is listening port 8080!')
     })
     //  
-    // ㄴ> 위에서 정해준 변수를 넣어서, middleware가 들을 port를 정해주고
-    //    성공적으로 해당 port를 듣고 있을 시, 확증을 위해 응답하는 '콜백 함수'를 넣어줘서
+    // |   위에서 정해준 변수를 넣어서, middleware가 들을 port를 정해주고
+    // ㄴ> 성공적으로 해당 port를 듣고 있을 시, 확증을 위해 응답하는 '콜백 함수'를 넣어줘서
     
     // ㄴ> 정확히 어느 port 에서 middleware가 들을 것인지 정해주는 코드
 
