@@ -91,7 +91,8 @@
    
    
     git add .   
-   
+    ㄴ> 모두 추가하는 명령어
+
    
 * * *
 # 4. Git_Basic_commit   
