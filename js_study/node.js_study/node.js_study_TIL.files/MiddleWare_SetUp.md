@@ -74,7 +74,7 @@
     })
 
 ```
-**ㄴ> '/' path로 들어갔을 때 (특별한 조건이 없는 url), middleware의 라우팅을 정해준 것이다**
+**ㄴ> '/' path로 들어갔을 때의 (특별한 조건이 없는 url), middleware의 라우팅을 정해준 것이다**
    
 * * *
    
@@ -82,7 +82,7 @@
    
 * 2.1. path 에 조건을 다는 경우   
    
-2.1.1. 특정 (지정된)path 에 대한 조건
+2.1.1. 특정 (지정된) path 에 대한 조건
    
 ```javascript
 
@@ -92,9 +92,9 @@
     })
 
 ```
-**ㄴ> '/home' path로 들어갔을 때 ( 특정된 path가 지정되었을 때 ), middleware의 라우팅을 정해준 것이다**
+**ㄴ> '/home' path로 들어갔을 때의 ( 특정된 path가 지정되었을 때 ), middleware의 라우팅을 정해준 것이다**
    
-2.1.2. 특정 (매개변수로써의)path 에 대한 조건   
+2.1.2. 특정 (매개변수로써의) path 에 대한 조건   
    
 ```javascript
 
@@ -107,11 +107,11 @@
    
 ```
 **ㄴ> 매개변수로써 들어가는 path 에 대해서, middleware의 라우팅을 정해준 것이다**   
-**ㄴ> ! `매개변수로써 들어가는 path` 는 `req.params`를 통해 접근할 수 있다 !**   **('req.params' 사용시 객체값을 반환 받는다, 고로 직접적으로 해당되는 key값을 통해서 조회해야 희망하는 value 값에 접근 할 수 있다)**   
+**ㄴ> ! `매개변수로써 들어가는 path` 는 `req.params`를 통해 접근할 수 있다 !**   **('req.params' 사용시 객체값을 반환 받는다, 고로 예시) `req.params.visitors_name` 처럼 직접적으로 해당되는 key값을 통해서 조회해야 희망하는 value 값에 접근 할 수 있다)**   
 
 * 2.2. query string 에 조건을 다는 경우   
    
-2.2.1. 특정 (지정된)query string 에 대한 조건
+2.2.1. 특정 (지정된) query string 에 대한 조건
    
 ```javascript
 
@@ -121,7 +121,7 @@
     })
 
 ```
-**ㄴ> '?visitor=father' query string으로 들어갔을 때 ( 특정된 query string이 지정되었을 때 ), middleware의 라우팅을 정해준 것이다**
+**ㄴ> '?visitor=father' query string으로 들어갔을 때의 ( 특정된 query string이 지정되었을 때 ), middleware의 라우팅을 정해준 것이다**
    
 2.2.2. 특정 (매개변수로써의) query string 에 대한 조건   
    
@@ -132,3 +132,44 @@
         res.send(`identify yourself stranger ${req.query.id} !!!`)
 
     })
+```
+
+**| 매개변수로써의 query string에 대한 설정은 url에 따른 server 구성시 자동적으로 갖추어지기 때문에**   
+**ㄴ> 특별히 추가되는 코드가 없다**   
+   
+**ㄴ> ! `매개변수로써 들어가는 query string` 은 `req.query`를 통해 접근할 수 있다 !**   **('req.query' 사용시 객체값을 반환 받는다, 고로 예시) `req.query.id` 처럼 직접적으로 해당되는 key값을 통해서 조회해야 희망하는 value 값에 접근 할 수 있다)**   
+   
+* 2.3. 번외 req.body   
+   
+2.3.1. req.body 소개   
+   
+>   req.body 는   
+>      
+>   post method 를 통해 전달된 request 에   
+>      
+>   접근 할 수 있게끔 하는 코드다   
+
+2.3.2. req.body 구조   
+   
+>   req.body 구조는   
+>      
+>   객체로 이루어져 있으며,   
+>      
+>   submit(enter될 때),   
+>      
+>   html input 태그 각각의 name과 `client가 기입한 데이터`에 따라,   
+>   
+>   * 단일 input 일 경우   
+
+>   { (input의)name : `client가 기입한 데이터` } = { key : value } = req.body   
+>   가 된다.     
+>       
+>   * 복수 input 일 경우   
+>   
+>   { (input의)name_1 : `client가 기입한 데이터_1`, (input의)name_2 : `client가 기입한 데이터_2` } = { key_1 : value_1, key_2 : value_2 } = req.body   
+>   가 된다.     
+   
+2.3.3. req.body 유의사항   
+   
+(req.body' 사용시 객체값을 반환 받기 때문에 고로 예시 `req.body.input_1_에_해당하는_key_값` 처럼   
+ 직접적으로 해당되는 key값을 통해서 조회해야 희망하는 value 값에 접근 할 수 있다)
