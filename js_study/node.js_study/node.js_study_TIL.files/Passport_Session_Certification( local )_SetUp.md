@@ -38,7 +38,9 @@
     //    꼭 진행되어야 하는 선언이다
 
 
-```   
+```
+   
+* * *
    
 # 3. 세부 local-strategy 작성 및 선언   
    
@@ -91,7 +93,9 @@
     )
 ```
 ㄴ> 해당 선언을 통해, passport 에서 활용할 local strategy( 인스턴스 ) 를 지정/설정해주었다   
-
+   
+* * *
+   
 # 4. passport local strategy 필수 선언 ( serialize, deserialize 선언하기 )   
    
 ```javascript
@@ -114,7 +118,9 @@ var deserialize_과정 = function(user,done){
 passport.deserialize( deserialize_과정 )
 
 ```
-
+   
+* * *
+   
 # 5. passport local strategy 를 적용할 url 선언/설정   
    
 ```javascript
