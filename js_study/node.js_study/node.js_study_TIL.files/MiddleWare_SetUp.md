@@ -172,4 +172,36 @@
 2.3.3. req.body 유의사항   
    
 (req.body' 사용시 객체값을 반환 받기 때문에 고로 예시 `req.body.input_1_에_해당하는_key_값` 처럼   
- 직접적으로 해당되는 key값을 통해서 조회해야 희망하는 value 값에 접근 할 수 있다)
+ 직접적으로 해당되는 key값을 통해서 조회해야 희망하는 value 값에 접근 할 수 있다)   
+   
+또한, req.body 는 client 중심적으로 동작하기 때문에 default 로 undefined 가 반환된다.   고로 body-parser module 을 통해 req.body 에 대한 데이터를 '신뢰'하게끔 선언/설정 해야 된다.    
+   
+2.3.3.0 순서 및 개요   
+   
+*   2.3.3.1. install body-parser module   
+*   2.3.3.2. req.body 에 대한 '신뢰' 선언/'파싱' 선언   
+   
+2.3.3.1.   
+   
+    npm install body-parser --save   
+ㄴ> 해당 명령어를 통해 body-parser module 을 install
+
+2.3.3.2.   
+   
+```javascript
+    
+    var bodyParser = require('body-parser')
+
+    app.use(bodyParser.urlencoded({
+        extended: false,
+        // node.js 내장 라이브러리 query string 을 사용할 시 => false
+        // 외부 라이브러리 qs 를 사용할 시 => true
+        // 로, 때에 따라 넣는 옵션이다. (대체로, qs 라이브러리까지 쓰진 않기 때문에 false 로 둔다)
+        limit: '1gb',
+        // request body 가 지닐 수 있는 maximum 데이터량을 정해주는 옵션값이다
+        parameterLimit: 3
+        // request body 가 지닐 수 있는 parameter( key-value 쌍 )을 정해주는 옵션값이다
+    }))
+
+```
+ㄴ> 해당 선언을 통해, req.body 에 대한 데이터를 '신뢰'하게끔 선언/ '파싱' 하게끔 설정하였다 .   
