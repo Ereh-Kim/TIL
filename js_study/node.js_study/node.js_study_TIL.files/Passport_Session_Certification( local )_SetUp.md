@@ -125,14 +125,17 @@ var 인증시_redirect =
 {   successRedirect: '/',
     failureRedirect: '/login_fail'}
 
-app.post('/login_local',()=>{
+app.post('/local_strategy_적용할_url',()=>{
 
     passport.authenticate( 인증방식, 인증시_redirect )
 
 })
 ```   
-해당 선언을 통해서, /login_local 에서 local strategy 를 사용할 것을 선언
+해당 선언을 통해서, /local_strategy_적용할_url 에서 local strategy 를 사용할 것을 선언
 
-**ㄴ> 인증시_redirect가 필요한 이유는**
+**ㄴ> 인증시_redirect가 필요한 이유는**   
 **경우에 따른 랜딩 페이지 redirect 를 지정함으로써,**   
-**client가 인증에 관해 승인 되었음을 확인하는 절차를 보여주게끔 한다** 
+**client가 인증에 관해 승인 되었음을 확인하는 절차를 보여주게끔 한다**   
+   
+**input 혹은 form 태그에 /local_strategy_적용할_url 를**   
+**action = "local_strategy_적용할_url" 를 추가해야 문제없이 적용된다**
