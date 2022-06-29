@@ -26,12 +26,15 @@
     app.use(passport.session())
     
     //ㄴ> 해당 선언을 통해,
+    //
+    //    미들웨어 전역에
     //    passport 와 session 을 연동할 미들웨어를 선언/설정했다
     //    passport 와 session 을 연동했다 봐도 무방하다
 
     app.use(passport.initialize())
 
     //ㄴ> 해당 선언을 통해,
+    //    미들웨어 전역에
     //    passport 의 초기화를 진행했다
 
     //ㄴ> 초기화된 상태에서 코드를 읽는 것이 이상적이기 때문에,
