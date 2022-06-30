@@ -9,5 +9,5 @@
 ## 2. [Session_SetUp][2_link]   
 [2_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/js_study/node.js_study/node.js_study_TIL.files/Session_SetUp.md   
 
-## 3. [About_React,React][3_link]   
+## 3. [Passport_Session_Certification( local )_SetUp][3_link]   
 [3_link]:https://github.com/Ereh-Kim/TIL/blob/TIL/js_study/node.js_study/node.js_study_TIL.files/Passport_Session_Certification(%20local%20)_SetUp.md 
