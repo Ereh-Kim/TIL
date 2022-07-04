@@ -10,10 +10,27 @@ class Test extends React.Component{
         property_2:2,
         property_3:js_file,
         property_4:Extra_Dom,
-        property_5:['tag1','tag2','tag3']
+        property_5:[
+            {id:1,name:'tag1'},
+            {id:2,name:'tag2'},
+            {id:3,name:'tag3'}
+        ]
     }
     // ㄴ> 이처럼 component 안에 property를 더할수도 있다.
     // ㄴ> 여기서 state property는 고정값이다
+
+    test = {
+        test: '150'
+    }
+
+    ereh = {
+        name : 'kim'
+    }
+    // class 를 사용하기 때문에,
+    // '=' 연산자를 활용해서 class 의 property 를 추가할 수 있는
+    // class field 문법을 적용할 수 있다
+    //
+    // 고로 위의 두 선언(property)는 대체로 통영되지 않지만 맞는 문법이다
 
     state_function(){
         const { property_1 } = this.state;
@@ -45,18 +62,19 @@ class Test extends React.Component{
         //ㄴ> state property 내에서의 변화를 다음 array_function을 통해 이끌어냄
     }
 
-    constructor(){
-        super();
-        this.click_event = this.click_event.bind(this)
+    // constructor(){
+        // super();
+        // this.click_event = this.click_event.bind(this)
         //ㄴ> 해당 property의 function이 동작할 수 있게끔 this의 접근을 허용하는 consturctor 내의 method임 = bind()
         // constructor 에서만 this의 property에 접근 가능함
-    }
+    // }
         //ㄴ> '브라우저/client'에서 property에 대한 접근 해결책 => constructor method
         //ㄴ> super constructor 필요
 
     render(){
-
-        console.log('props', this.state.props)
+        // Component 에 render method 만 react element 랜더링을 위해 쓰이는 이유는,
+        // ReactDom 객체에 내장된 render method 가 
+        // Component 의 render method 이외에 새롭게 추가하는 method 의 return jsx( react element ) 값이 전달되지 않기 때문이다
 
         return (
         <React.Fragment>
@@ -69,10 +87,22 @@ class Test extends React.Component{
         <p>{this.state_function()}</p>
         {/* ㄴ> component의 method 안에서는, 위의 두 표현식처럼, 변수를 포함시에는 { 변수 }로 표현되어야 한다 */}
 
-        <ul>{this.state.property_5.map(tag=><li key={tag}>{tag}</li>)}</ul>
+        <ul>{this.state.property_5.map(tag=><li key={tag.id} value={tag.name}>{tag.name}</li>)}</ul>
+        {/* react 안에서는 이런식의 표현식을 써야된다 */}
+        {/* key 태그를 통해 어떤 태그인지를 구분하고,  */}
         {/* array형식의 property 안에서는 map method를 적용함 */}
 
-        <Extra_Dom/>
+        
+            <div>
+            {this.state.property_5.map(tag=>
+                
+                <Extra_Dom key={tag.id} value={tag.name}>
+
+                <p>test</p>
+
+                </Extra_Dom>)}
+        </div>
+
         {/* ㄴ> 다른 jsx 파일을 import해서 추가할 수도 있다 */}
         
         {/* <script>{this.property_3}</script> */}
@@ -99,5 +129,7 @@ class Test extends React.Component{
 // 템플릿을 손쉽게 분리해서, source.js에서 import 할 수 있다 
 
 // import 할시 render 함수의 return을 기준으로 (템플릿 구성) 생각하면 편하다
+
+// jsx component 는 div 태그 안에서 하나로 묶을 수 있다 ( 보통은 태그들을 react.fragment 로 묶는다 )
 
 export default Test

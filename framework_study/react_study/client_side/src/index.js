@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 import Image from 'images/meat.png'
 import Testing from 'components/component.jsx'
+import Extra_Dom from 'components/Extra_Dom.jsx'
 // component의 jsx파일을 템플릿처럼 생각해서 가져올 수 있다
 // 단 가져올 시 jsx파일 표현식을 따라야되기 때문에, 
 // ReactDom.render( <변수로 가져온 jsx 템플릿/>, document.getElementById('root) )
@@ -31,8 +32,6 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 // 모듈이자 변수인 ReactDom 은 index.html의 연결다리로써, react_element를 직접 html 파일에 렌더링하는데 대체로 사용됨
 
 // 
-
-
 
 ReactDOM.render(
 <Testing />,

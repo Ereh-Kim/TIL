@@ -3,20 +3,27 @@ import React from "react";
 class Extra extends React.Component {
     
     state = {
-        inheritation : [
-            {id: 1, value: 1},
-            {id: 2, value: 2},
-            {id: 3, value: 3},
-            {id: 4, value: 4}
-        ]
+    
+        data:[
+        {id:1,value:4},
+        {id:2,value:5},
+        {id:3,value:6},
+    ],
+    
+        props: this.props.value
+
     }
 
+
     render(){
+
+        console.log("Props_Value" ,this.props)
+
         return (
         <React.Fragment>
-        {this.state.inheritation.map(item =>
-         <p  key={item.id} value={item.value}>
-         This is Extra_Dom </p> )}
+         <p>{this.props.children}</p>
+         {this.state.data.map(input=><button key={input.id} value={input.value}>Extra_Dom</button>)}
+
         </React.Fragment>
         )
     }
