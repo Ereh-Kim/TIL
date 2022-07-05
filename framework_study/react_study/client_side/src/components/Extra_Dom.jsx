@@ -21,6 +21,14 @@ class Extra extends React.Component {
 
         return (
         <React.Fragment>
+        <button 
+        onClick={()=> this.props.onDelete(this.props.id)}
+         >Delete_button</button>
+        
+        <button
+        onClick={()=> this.props.onReset({id:this.props.id, value:this.props.value})}
+        >Insert_button</button>
+
          <p>{this.props.children}</p>
          {this.state.data.map(input=><button key={input.id} value={input.value}>Extra_Dom</button>)}
 

@@ -11,9 +11,9 @@ class Test extends React.Component{
         property_3:js_file,
         property_4:Extra_Dom,
         property_5:[
-            {id:1,name:'tag1'},
-            {id:2,name:'tag2'},
-            {id:3,name:'tag3'}
+            {id:0,value: 1},
+            {id:1,value: 2},
+            {id:2,value: 3}
         ]
     }
     // ㄴ> 이처럼 component 안에 property를 더할수도 있다.
@@ -62,6 +62,24 @@ class Test extends React.Component{
         //ㄴ> state property 내에서의 변화를 다음 array_function을 통해 이끌어냄
     }
 
+    Delete = (target) => {
+        const state = this.state.property_5.filter( c => c.id !== target )
+        this.setState({ property_5 : state });
+    }
+
+    Reset = (target) => {
+        
+        const restore_state = [...this.state.property_5]
+
+        const restore_state_index = this.state.property_5.map( element => element.id ).indexOf(target.id)
+
+        restore_state[restore_state_index].value++
+
+        this.setState({ property_5 : restore_state })
+
+        console.log(restore_state[restore_state_index])
+    }
+
     // constructor(){
         // super();
         // this.click_event = this.click_event.bind(this)
@@ -87,7 +105,7 @@ class Test extends React.Component{
         <p>{this.state_function()}</p>
         {/* ㄴ> component의 method 안에서는, 위의 두 표현식처럼, 변수를 포함시에는 { 변수 }로 표현되어야 한다 */}
 
-        <ul>{this.state.property_5.map(tag=><li key={tag.id} value={tag.name}>{tag.name}</li>)}</ul>
+        {/* <ul>{this.state.property_5.map(tag=><li key={tag.id} value={tag.name}>{tag.name}</li>)}</ul> */}
         {/* react 안에서는 이런식의 표현식을 써야된다 */}
         {/* key 태그를 통해 어떤 태그인지를 구분하고,  */}
         {/* array형식의 property 안에서는 map method를 적용함 */}
@@ -96,7 +114,13 @@ class Test extends React.Component{
             <div>
             {this.state.property_5.map(tag=>
                 
-                <Extra_Dom key={tag.id} value={tag.name}>
+                <Extra_Dom 
+                    onDelete= {this.Delete}
+                    onReset= {this.Reset}
+                    key={tag.id} 
+                    id={tag.id} 
+                    value={tag.value}
+                     >
 
                 <p>test</p>
 
