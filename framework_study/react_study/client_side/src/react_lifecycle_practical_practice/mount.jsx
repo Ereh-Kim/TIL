@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Updater from "react_lifecycle_practical_practice/update.jsx"
 
 class Mount extends Component {
 
@@ -17,18 +18,38 @@ class Mount extends Component {
 
     incement = () => {
         const incremented_default = this.state.default + 1
+
         this.setState({ default : incremented_default })
+        this.setState({ renewed_Default : incremented_default })
+
         console.log(incremented_default)
     }
 
     componentDidMount(){
         // console.log('App-mounted -3', '랜더링 이후 자동적으로 직접적인 데이터를 불러오는 method/api')
+        // 처음으로 시전되는 DOM 트리 랜더링 이후, 자동적으로 호출되는 method 이다
         // 주로 ajax 를 연동해서 쓰이는 api / method 이다
 
         this.setState({ renewed_Default : 0 })
 
     }
 
+    componentWillUnmount(){
+        console.log('uncoumt')
+        //Dom 에서 현 component 가 제거될 때에 호출되는 method 이다
+    }
+
+    componentDidUpdate = (prevProps, prevState) => {
+        console.log( 'this is state' , prevState)
+        console.log('this is props', prevProps)
+        // state 과 props 는 값이 변할 때마다/변한 후 ( 업데이트 될때마다 ) component 는 다시 새롭게 랜더링된다,
+        // 이 때, 자동적으로 호출되는 method 이다.
+        // 또한 state / props 의 값이 바뀔때마다 자동적으로 componentDidUpdate 함수가 호출됨
+
+    }
+
+
+    
     render(){
 
         // console.log('App-Rendered -2', ' app 을 DOM 노드에 직접 랜더링 ')
@@ -36,9 +57,21 @@ class Mount extends Component {
         return (
             <div>
 
-            <p>{this.state.default}</p>
+            <p>this is the initial page!, your default data is 1</p>
             <button onClick={this.incement} >incement</button>
-            <p> you just incremented default to {this.state.renewed_Default} </p>
+            <p> you just incremented default to 
+            
+            <p>you just updated default to
+                
+            < Updater 
+            key={this.state.renewed_Default}
+            value={this.state.renewed_Default}
+            />
+
+                 </p>
+            
+            
+            </p>
 
             </div>
         )
@@ -46,10 +79,9 @@ class Mount extends Component {
 
 }
 
+const TTest = () => {
+
+        return <div>TTest</div>
+}
+
 export default Mount
-
-
-// React 의 mount 과정 실현
-// constructor -> render -> componentDidmount 순으로,
-// constructor 와 render method 에서 자료와 랜더링을 마치면,
-// componentDidmunt 에서 최종적으로 state 나 props 혹은 react-element 에 기입되어야 자료를 가져와 기입한다

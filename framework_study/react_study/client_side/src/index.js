@@ -12,6 +12,7 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
+
 const element = (
 <div>
 <p>testing</p>

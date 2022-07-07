@@ -1,6 +1,6 @@
 
 # mount   
-( component 가 초기에 만들어지거나 주입되고 나서 데이터를 업데이트 할 때의 과정 )   
+( DOM 트리가 초기에 구성되어지고 나서 브라우저에 데이터를 드러낼 때의 과정 )   
    
 hook 에는   
 1. constructor    
@@ -8,7 +8,7 @@ hook 에는
 3. componentDidMount   
    
 # update   
-( state 나 props 가 바뀔때의 과정 )   
+( state 나 props 값이 바꿔서 브러우저(view)에 업데이트 할 때 혹은 리렌더링 할 때에 이루어져야 하는 자동적 업데이트 과정 )   
    
 hook 에는   
 1. render   
