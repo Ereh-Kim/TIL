@@ -2,10 +2,12 @@ import React, {Component} from "react"
 
 // stateless component
 
-const Stateless_Component = () => {
+const Stateless_Component = (props) => {
 
     return (
-            <React.Fragment></React.Fragment>
+            <React.Fragment>
+                {props}
+            </React.Fragment>
         )
 
 }

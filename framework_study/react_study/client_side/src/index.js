@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 //  기본적으로 react_활용시 필요로 하는 모듈들을 가져오는 코드
 
 import Image from 'images/meat.png'
-import Testing from 'components/component.jsx'
+// import Testing from 'components/component.jsx'
 import Extra_Dom from 'components/Extra_Dom.jsx'
 // component의 jsx파일을 템플릿처럼 생각해서 가져올 수 있다
 // 단 가져올 시 jsx파일 표현식을 따라야되기 때문에, 
 // ReactDom.render( <변수로 가져온 jsx 템플릿/>, document.getElementById('root) )
 // 한마디로, jsx파일들의 componenet => source.js으로 import 이후 render => source.html 에서 파싱
+
+import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
 const element = (
 <div>
@@ -33,8 +35,12 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 
 // 
 
-ReactDOM.render(
-<Testing />,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+// <Testing />,
+//   document.getElementById('root')
+// );
 
+ReactDOM.render(
+  <Mount />,
+    document.getElementById('root')
+  );
