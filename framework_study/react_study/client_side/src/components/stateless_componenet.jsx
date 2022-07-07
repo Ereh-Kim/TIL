@@ -1,6 +1,18 @@
 import React, {Component} from "react"
 
-class Stateless_Componenet extends Component {
+// stateless component
+
+const Stateless_Component = () => {
+
+    return (
+            <React.Fragment></React.Fragment>
+        )
+
+}
+
+//class component
+
+class Class_Componenet extends Component {
 
     render (){
         return (
