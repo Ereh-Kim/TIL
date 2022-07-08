@@ -8,7 +8,7 @@ hook 에는
 3. componentDidMount   
    
 # update   
-( state 나 props 값이 바꿔서 브러우저(view)에 업데이트 할 때 혹은 리렌더링 할 때에 이루어져야 하는 자동적 업데이트 과정 )   
+( state 나 props 값이 바꿔서 브러우저(view)에 업데이트/리렌더링 될 때에 이루어지는 업데이트 과정 )   
    
 hook 에는   
 1. render   

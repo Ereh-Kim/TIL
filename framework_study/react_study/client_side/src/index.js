@@ -2,6 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //  기본적으로 react_활용시 필요로 하는 모듈들을 가져오는 코드
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// react router 가 정상적으로 동작하게끔 하는 componenet => BrowserRouter
+// Routes 는 Route component 내의 path가 부합하는지 확인하고 해당 path에 해당하는 component 를 랜더링 하게끔 해주는 componenet
+// Route 의 path 는 어느 url 에서 해당 component 를 랜더링하게끔 할 지 정해주는 component
+
+
 import Image from 'images/meat.png'
 // import Testing from 'components/component.jsx'
 import Extra_Dom from 'components/Extra_Dom.jsx'
@@ -11,6 +17,9 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 // 한마디로, jsx파일들의 componenet => source.js으로 import 이후 render => source.html 에서 파싱
 
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
+import UseState_component from 'react_hook_practice/useState';
+
+// import UseState_component from 'react_hook_practice/useState';
 
 
 const element = (
@@ -41,7 +50,33 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 //   document.getElementById('root')
 // );
 
+function Hook_manager () {
+
+  return (
+    
+    <Routes>
+
+    <Route exact path='/useState_pratice' element={<UseState_component/>} />
+
+    </Routes>
+    
+  )
+
+
+}
+
+// const UseState_component = () => {
+
+//   return(
+//       <div>Say Hello</div>
+//   )
+
+// }
+
+
 ReactDOM.render(
-  <Mount />,
+<BrowserRouter>
+  <Hook_manager/>
+  </BrowserRouter>,
     document.getElementById('root')
   );
