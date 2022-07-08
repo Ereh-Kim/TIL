@@ -7,8 +7,8 @@ const UseState_component = () => {
 
     const [ state, supported_update_mehtod ] = useState(1)
     // 해당 선언을 통해서,
-    // state 를 선언하고,
-    // setState 에 해당하는 method 를 생성할 수 있다
+    // state 의 값이 정해진 채로 state 를 반환하고 ,
+    // setState 에 역할에 해당하는 함수 를 반환한다
 
 
     const trigger = () => {

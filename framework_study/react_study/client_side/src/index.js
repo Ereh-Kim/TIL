@@ -17,9 +17,11 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 // 한마디로, jsx파일들의 componenet => source.js으로 import 이후 render => source.html 에서 파싱
 
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
-import UseState_component from 'react_hook_practice/useState';
 
-// import UseState_component from 'react_hook_practice/useState';
+import UseState_component from 'react_hook_practice/useState';
+import UseReducer_componenet from 'react_hook_practice/useReducer'
+
+
 
 
 const element = (
@@ -56,7 +58,8 @@ function Hook_manager () {
     
     <Routes>
 
-    <Route exact path='/useState_pratice' element={<UseState_component/>} />
+    <Route exact path='/useState_practice' element={<UseState_component/>} />
+    <Route exact path="/useReducer_practice" element={<UseReducer_componenet/>} />
 
     </Routes>
     
