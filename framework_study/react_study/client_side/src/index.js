@@ -20,7 +20,7 @@ import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
 import UseState_component from 'react_hook_practice/useState';
 import UseReducer_componenet from 'react_hook_practice/useReducer'
-
+import UseEffect_component from 'react_hook_practice/useeffect';
 
 
 
@@ -60,6 +60,7 @@ function Hook_manager () {
 
     <Route exact path='/useState_practice' element={<UseState_component/>} />
     <Route exact path="/useReducer_practice" element={<UseReducer_componenet/>} />
+    <Route exact path="/useeffect_practice" element={<UseEffect_component/>} />
 
     </Routes>
     
