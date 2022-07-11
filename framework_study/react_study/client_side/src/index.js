@@ -22,6 +22,7 @@ import UseState_component from 'react_hook_practice/useState';
 import UseReducer_componenet from 'react_hook_practice/useReducer'
 import UseEffect_component from 'react_hook_practice/useeffect';
 import UseRef_component from 'react_hook_practice/useRef';
+import Uselayouteffect_component from 'react_hook_practice/useLayouteffect'
 
 
 
@@ -63,6 +64,7 @@ function Hook_manager () {
     <Route exact path="/useReducer_practice" element={<UseReducer_componenet/>} />
     <Route exact path="/useeffect_practice" element={<UseEffect_component/>} />
     <Route exact path="/useRef_practice" element={<UseRef_component/>} />
+    <Route exact path="/useLayouteffect_practice" element={<Uselayouteffect_component/>} />
 
     </Routes>
     
