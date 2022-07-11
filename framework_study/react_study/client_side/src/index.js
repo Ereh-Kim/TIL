@@ -18,13 +18,7 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
-import UseState_component from 'react_hook_practice/useState';
-import UseReducer_componenet from 'react_hook_practice/useReducer'
-import UseEffect_component from 'react_hook_practice/useeffect';
-import UseRef_component from 'react_hook_practice/useRef';
-import Uselayouteffect_component from 'react_hook_practice/useLayouteffect'
-
-
+import Hook_manager from 'react_hook_practice/hook_manager';
 
 const element = (
 <div>
@@ -54,24 +48,6 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 //   document.getElementById('root')
 // );
 
-function Hook_manager () {
-
-  return (
-    
-    <Routes>
-
-    <Route exact path='/useState_practice' element={<UseState_component/>} />
-    <Route exact path="/useReducer_practice" element={<UseReducer_componenet/>} />
-    <Route exact path="/useeffect_practice" element={<UseEffect_component/>} />
-    <Route exact path="/useRef_practice" element={<UseRef_component/>} />
-    <Route exact path="/useLayouteffect_practice" element={<Uselayouteffect_component/>} />
-
-    </Routes>
-    
-  )
-
-
-}
 
 // const UseState_component = () => {
 
