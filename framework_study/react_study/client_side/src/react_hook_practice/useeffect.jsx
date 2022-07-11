@@ -8,23 +8,22 @@ const UseEffect_component = () => {
     // const [request_controller, trigger] = useState(ture)
 
     useEffect(()=>{
-        // axios.get("https://jsonplaceholder.typicode.com/posts/1",{
-        //     params : {
-        //         lat : 1,
-        //         lon : 1,
-        //         appid : 'f4f37e0b13d3ce2aad89699e5a2609a9'
-        //     }
-        update(state + 1)
-        // }).then((result)=>{
-            // update(result.data.userId)
-        // })
-        // .then(()=>{
-            console.log(state, 'state_update')
-            console.log(test,'test_updated')
-        // })
-        // console.log('hi')
-    },
-    [test]
+        axios.get("https://jsonplaceholder.typicode.com/posts/1",{
+            params : {
+                lat : 1,
+                lon : 1,
+                appid : 'f4f37e0b13d3ce2aad89699e5a2609a9'
+            }
+        // update(state + 1)
+        }).then((result)=>{
+            update(result.data.userId)
+        })
+        .then(()=>{
+            // console.log(state, 'state_update')
+            // console.log(test,'test_updated')
+        })
+        console.log(state)
+    },[state]
     // 인자로, dependency 를 추가하는데
 
     // 이유인 즉슨, useEffect가 state 나 props 값이 변하면
@@ -40,8 +39,9 @@ const UseEffect_component = () => {
     // 조건을 좁힌 것이다.
 
     )
-    //  state 과 props 의 값을 초기화 할 때 와
-    // state 과 props 의 값이 변할 때마다 useEffect 매서드는 호출된다
+    // 랜더링이 완료된 후에 useeffect는 호출된다고 한다 즉,
+    // 초기 브라우저에 랜더링이 때 와
+    // state 과 props 의 값이 변해서 리랜더링이 된 후에 useEffect 매서드는 호출된다
     
     //ㄴ> api 를 통해 가져온 초기 데이터 값을 반영하고자 할 때, 쓰임
     // , 그래서 useState 와 같이 많이 쓰임
