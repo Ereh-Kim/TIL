@@ -1,6 +1,6 @@
 import { useLayoutEffect, useEffect, useRef, useState } from "react";
 
-function useLayoutEffect_component (){
+const useLayoutEffect_component = () => {
 
     const [ State, update_method] = useState(1)
 
