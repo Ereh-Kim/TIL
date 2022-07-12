@@ -1,6 +1,10 @@
-import React from "react"
+import React, {useContext} from "react"
+import { Appcontext } from "./useContext"
 
-const Login = ({setUsername}) => {
+const Login = () => {
+
+    const { setUsername } = useContext(Appcontext)
+    //                          ㄴ> context 객체의 현재 값을 반환한다
 
     return(
         <div>
@@ -13,3 +17,5 @@ const Login = ({setUsername}) => {
     )
 
 }
+
+export default Login
