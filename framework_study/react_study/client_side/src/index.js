@@ -19,7 +19,14 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
 import Hook_manager from 'react_hook_practice/hook_manager';
-import Redux_practice_ReduxToolkit_applied from 'redux_tutorial_featured_ReduxToolkit/redux_practice_route_manager';
+// import Redux_practice_ReduxToolkit_applied from 'redux_tutorial_featured_ReduxToolkit/redux_practice_route_manager';
+// import Routing_tutorial from 'redux_tutorial_pure_version/tutorial_router';
+
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+
+import UserSlice, { userSlice } from "./redux_tutorial_featured_ReduxToolkit/user";
+
 
 const element = (
 <div>
@@ -59,10 +66,31 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 // }
 
 
+const store = configureStore({
+  reducer: {
+    user: UserSlice
+  }
+})
+
 ReactDOM.render(
+  <div>
 <BrowserRouter>
   <Hook_manager/>
-  <Redux_practice_ReduxToolkit_applied/>
-  </BrowserRouter>,
+
+  {/* <Redux_practice_ReduxToolkit_applied/>
+  <Routing_tutorial/> */}
+
+  </BrowserRouter>
+  
+  <React.StrictMode>
+
+<Provider store={store}>
+
+</Provider>
+
+</React.StrictMode>
+  
+  </div>
+  ,
     document.getElementById('root')
   );
