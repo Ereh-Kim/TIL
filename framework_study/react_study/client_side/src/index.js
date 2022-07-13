@@ -19,8 +19,7 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
 import Hook_manager from 'react_hook_practice/hook_manager';
-import Redux_practice from 'redux_tutotial/redux_practice_route_manager';
-import App from 'redux_tutotial/redux_applied_app'
+import Redux_practice_ReduxToolkit_applied from 'redux_tutorial_featured_ReduxToolkit/redux_practice_route_manager';
 
 const element = (
 <div>
@@ -63,7 +62,7 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 ReactDOM.render(
 <BrowserRouter>
   <Hook_manager/>
-  <Redux_practice/>
+  <Redux_practice_ReduxToolkit_applied/>
   </BrowserRouter>,
     document.getElementById('root')
   );
