@@ -19,13 +19,12 @@ import Extra_Dom from 'components/Extra_Dom.jsx'
 import Mount from 'react_lifecycle_practical_practice/mount.jsx'
 
 import Hook_manager from 'react_hook_practice/hook_manager';
-// import Redux_practice_ReduxToolkit_applied from 'redux_tutorial_featured_ReduxToolkit/redux_practice_route_manager';
-// import Routing_tutorial from 'redux_tutorial_pure_version/tutorial_router';
 
-import { configureStore } from '@reduxjs/toolkit';
+import {store, store2} from './Redux_tutorial/store'
+import App from './Redux_tutorial/App'
+import UseSelector from './Redux_tutorial/useSelector'
+
 import { Provider } from 'react-redux';
-
-import UserSlice, { userSlice } from "./redux_tutorial_featured_ReduxToolkit/user";
 
 
 const element = (
@@ -49,48 +48,14 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 // React 모듈로써 가져온 변수 'React'는 react_element 생성시 대체로 필요로 함 => EX) jsx
 // 모듈이자 변수인 ReactDom 은 index.html의 연결다리로써, react_element를 직접 html 파일에 렌더링하는데 대체로 사용됨
 
-// 
-
-// ReactDOM.render(
-// <Testing />,
-//   document.getElementById('root')
-// );
-
-
-// const UseState_component = () => {
-
-//   return(
-//       <div>Say Hello</div>
-//   )
-
-// }
-
-
-const store = configureStore({
-  reducer: {
-    user: UserSlice
-  }
-})
 
 ReactDOM.render(
-  <div>
-<BrowserRouter>
-  <Hook_manager/>
 
-  {/* <Redux_practice_ReduxToolkit_applied/>
-  <Routing_tutorial/> */}
+<Provider store={store2}>
 
-  </BrowserRouter>
-  
-  <React.StrictMode>
-
-<Provider store={store}>
+<UseSelector/>
 
 </Provider>
-
-</React.StrictMode>
-  
-  </div>
-  ,
+,
     document.getElementById('root')
   );
