@@ -26,6 +26,13 @@ import UseSelector from './Redux_tutorial/useSelector'
 
 import { Provider } from 'react-redux';
 
+// Provider component 는
+
+// Store 가 필요로 하는 혹은 필요한
+// nested components 에게 
+
+// Store 에 대한 접근을 가능하게 한다
+
 
 const element = (
 <div>
@@ -51,7 +58,12 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 
 ReactDOM.render(
 
-<Provider store={store2}>
+<Provider store={store}>
+{/*
+  ㄴ> 단 위에서 서술한 거와 같이
+      provider component 가 기능을 수행하기 위해선,
+      다음과 같이 생성한 Store 를 파싱해야 한다
+*/}
 
 <UseSelector/>
 

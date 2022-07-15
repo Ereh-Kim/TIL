@@ -2,16 +2,16 @@ import { configureStore } from "@reduxjs/toolkit";
 import { createStore } from 'redux'
 
 
-import Reducer_createdBySlice from './createSlice'
+import {Reducer} from './createSlice'
 
 
 export const store = configureStore({
-    reducer:{
-        Reducer_sended: Reducer_createdBySlice,
-    }
+    reducer: Reducer,
+    
 })
 // configureStore 은 Store 를 생성하는 ( API / Hook ) 이다
-// argument (인자) 로써, reducer function 을 기입한다
+// argument (인자) 로써, 
+// 객체 형식의 {reducer : reducer function || Slice 객체의 reducer property } 을 기입한다
 
 function reducer ( state = 0 , action ) {
     
