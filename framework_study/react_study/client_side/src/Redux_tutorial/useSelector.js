@@ -8,7 +8,7 @@ const Source = () => {
     // userSelector 는 Store 에서의 데이터를 
     // 추출하게끔 하는 Redux-Toolkit ( API / Hooks ) 이다        
 
-        (Extract_data) => Extract_data.value )
+        (Extract_data) => Extract_data )
     //      ㄴ> useSelector 는
     //      
     //          Store 에서의 데이터를 어떻게 정제해서 가져올지에 대한 
@@ -36,7 +36,7 @@ const Source = () => {
         <div>{Storage_Data}</div>
         
         <button onClick={()=>{
-                dispatch(increment(1))}
+                dispatch({type: "A", payload: 1})}
             }></button>
 
         {/* dispatch( action ) 
@@ -44,15 +44,8 @@ const Source = () => {
             ㄴ> 여기서 action 은,
                 앱의 변경사항을 기술하는 평범한 객체이다.
         
-                (action.type 에 기반한 switch 문 이 작성되었다면)
-                action은 반드시
-                어떤 형태의 action 이 행해질지 지시하는
-                type key를 가진 객체를 인수로 보내야 한다.
-
-                ( action function 이 Slice 객체의 actions 를 통해 정의되었다면 )
-                action 은
-                Slice 객체의 actions 를 import 해서
-                전달해야 한다.
+                dispatch function 은 action 객체를,
+                무조건 인수로 보내야 제기능을 한다.
 
         
         */}

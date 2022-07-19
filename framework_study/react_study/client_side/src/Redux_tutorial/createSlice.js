@@ -22,16 +22,10 @@ const CreatedSlice = createSlice({
         {  console.log(action)
 
          state.value = state.value + action.payload
-         // 여기서 action.payload 값은
-         // dispatch function 에 대입되는 action(인수) 값과 동일하다
+         // 여기서 action 매개변수는,
+         // dispatch function 에서 전달되는
 
-        // 어찌 보면,
-        // type 에 따라 달리 했던 dispatch function 에,
-        // payload 라는 개념을 차용해서,
-        
-        // action 에서도 type 에 따른 dispatch function 을 구사하는 게 아니라,
-        // input( payload property ) 값에 따른 dispatch function 을 구사할 수 있도록 차별화했다
-
+         // {type:"",payload:""} 로 이루어진 action 객체이다
 
         },
 
@@ -42,16 +36,14 @@ const CreatedSlice = createSlice({
     }
     // 'reducers' 옵션은 action 을 customize 할 수 있는 옵션으로,
 
-    // case reducer function 의 
-    // action.type 에 따른 switch 문 대신하는,
-    // action 프로세스를
-
-    // createSlice 를 통해 생성되는 Slice 객체 내에
-    // actions property 로 배당한다
+    // 다음과 같이 작성하면,
+    // Slice 객체의 actions property 가
+    // 각 type 에 따른 ActionCreator 를 반환해준다
+     
 
 
 })
-//  ㄴ> createSlice API 는 reducer function 을 property 로 갖는 객체를 반환함
+//  ㄴ> createSlice API 는 reducer function 을 property 로 갖는 Slice 객체를 반환함
 
 
 console.log(CreatedSlice.actions)

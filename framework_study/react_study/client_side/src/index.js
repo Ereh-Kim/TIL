@@ -58,7 +58,7 @@ const element3 = React.createElement('type',{property:'props`s_children_customiz
 
 ReactDOM.render(
 
-<Provider store={store}>
+<Provider store={store2}>
 {/*
   ㄴ> 단 위에서 서술한 거와 같이
       provider component 가 기능을 수행하기 위해선,
