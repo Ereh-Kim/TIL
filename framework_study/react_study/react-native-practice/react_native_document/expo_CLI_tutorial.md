@@ -20,6 +20,13 @@
    
 ㄴ> 이 때, 만들어진 app.json 파일은 app store 와의 직접적인 데이터를 기재/수정 할 수 있는 데이터를 다루는 파일이다.
    
+### 2. - 번외)   
+   
+- react-native module 에 대한 에러 발생시
+
+* npm install , yarn install 을 명령어를 통해,
+* dependencies 에 포함된 package 들을 install 할 수 있다.
+   
 ### 번외) ios/andriod development Tool at Window
    
 * Andriod -> andriod 에서 제공하는 'andriod studio' simulator 프로그램   
