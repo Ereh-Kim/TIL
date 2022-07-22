@@ -30,4 +30,6 @@ function Bubble_Sort ( input ){
 
 }
 
-console.log(Bubble_Sort(UnSortedArray))
+console.log(
+    Bubble_Sort(UnSortedArray)
+    )

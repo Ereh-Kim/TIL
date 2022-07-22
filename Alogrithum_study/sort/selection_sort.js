@@ -13,9 +13,9 @@
 
 let UnSortedArray = [ 3, 5, 2, 4, 1, 6 ]
 
-function SelectionSort ( input ){
+function Selection_Sort ( input ){
 
-    for( i=0; i<input.length; i++ ){
+    for( i=0; i<input.length-1; i++ ){
 
     let Standard = input[i]
     console.log(` ${i}번째, standard 값은 ${Standard} 입니다 `)
@@ -37,10 +37,12 @@ function SelectionSort ( input ){
 
     }
 
-    return input
+    const output = input
+
+    return output
 
 }
 
 console.log(
-    SelectionSort(UnSortedArray)
+    Selection_Sort(UnSortedArray)
     )
