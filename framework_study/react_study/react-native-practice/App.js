@@ -1,13 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { useState } from 'react';
 
 export default function App() {
+
+  const [State, updateState] = useState("")
+
+  const TestHook = (e) => {
+    
+    updateState(e)
+
+  }
+
   return (
 
     <View style={styles.BodyLayout}>
       {/* ㄴ> web 상의 div 와 같은 ( container ) 역할군을 함 */}
 
-      <TextInput style={styles.flex1} placeholder='place_your_email'/>
+      <TextInput 
+      style={styles.flex1}
+      placeholder='place_your_email'
+      onChangeText={TestHook}/>
 
       <Text style={
         {flex:4, borderColor: 'black', borderWidth: 2}
@@ -15,7 +28,7 @@ export default function App() {
         // css 문법에서의 background-color 를 backgroundColor 로
         //  해당 css 기능이 적용이 가능하게끔 한다
         
-        }>amaba_culture</Text>
+        }>amaba_culture, {State}</Text>
       {/* ㄴ? text display 를 하기 위한 태그 */}
 
       <Button 
@@ -66,6 +79,9 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 2,
   }
+
+  // flex 는 web 에서 grid 와 같은 맥락이라고 이해하면 쉅다.
+  // 공간을 분할해서, 얼만큼의 공간만큼을 차지할지를 비율로 표시한다
 
 });
 
