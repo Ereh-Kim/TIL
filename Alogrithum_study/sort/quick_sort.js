@@ -10,6 +10,8 @@
 
 let UnSortedArray = [ 3, 5, 2, 4, 1, 9, 10 ,11]
 
+let ConsumeTime = 0;
+
 function Quick_Sort( input ){
 
     if(input.length<2){
@@ -20,10 +22,10 @@ function Quick_Sort( input ){
     const Smaller_Group = []
     const Bigger_Group =[]
 
-    const RandomValue = Math.floor(Math.random()*input.length-1)   
+    const RandomValue = Math.floor(Math.random()*input.length)   
     const CompareValue = input[RandomValue]
 
-    const Standard_Group = [CompareValue]
+    const Pivot_Group = [CompareValue]
 
     for(i=0; i<input.length; i++){
         
@@ -37,11 +39,11 @@ function Quick_Sort( input ){
 
     console.log(
         {Smaller_Group:Smaller_Group,
-        Standard_Group: Standard_Group,
+        Pivot_Group: Pivot_Group,
         Bigger_Group: Bigger_Group}
     )
 
-    const output = Quick_Sort(Smaller_Group).concat(Standard_Group,Quick_Sort(Bigger_Group))
+    const output = Quick_Sort(Smaller_Group).concat(Pivot_Group,Quick_Sort(Bigger_Group))
     
     //                  ㄴ>  계속 smaller || bigger 그룹으로 나누다가,
     //                       더이상 나눌 수 없는 시점에서 합쳐진다.
@@ -52,7 +54,11 @@ function Quick_Sort( input ){
 
 }
 
+// quick sort 는
+// 불러야하는 호출 횟수가 Best ( logN ) Worst ( N ) 번이고,
+// 각 단계의 비교연산이 N 임으로
 
+// Best( N * logN ) 빅오-Worst( N*2 ) 이다
 
 
 console.log(
