@@ -8,13 +8,9 @@ let UnSortedArray = [ 3, 5, 2, 4, 1 ]
 
 function Bubble_Sort ( input ){
 
-    let CousumedTime = 0;
-
     for(e=0; e<input.length-1; e++){
 
     for(i=0; i<input.length; i++){
-
-        CousumedTime++
 
         if( input[i] > input[i+1] ){
 
@@ -27,8 +23,7 @@ function Bubble_Sort ( input ){
     }}
 
     const Output = {
-        sorted: input,
-        consumedTime: CousumedTime 
+        sorted: input
     }
 
     return Output

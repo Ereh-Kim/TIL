@@ -18,9 +18,12 @@ function SelectionSort ( input ){
     for( i=0; i<input.length; i++ ){
 
     let Standard = input[i]
+    console.log(` ${i}번째, standard 값은 ${Standard} 입니다 `)
 
     let MinValue = Math.min(...input.slice(i+1))
     let MinIndex = input.indexOf(MinValue)
+
+    console.log(` ${i}번째, minValue 값은 ${MinValue} 입니다 `)
 
     if( Standard > MinValue ){
 
