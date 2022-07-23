@@ -27,6 +27,8 @@
 
     pop = () => {
 
+        if(this.array.length>=1){
+
         console.log(
             `마지막에 insert 되었던 값 ${this.top}이 자료구조에서 삭제되었습니다`
             )
@@ -36,6 +38,12 @@
         this.top = Renewed_Top
         
         return this
+    }
+
+        else{
+            this.isEmpty()
+        }
+
 
     }
 
@@ -67,11 +75,22 @@
     isEmpty = () => {
 
         if( this.array.length == 0 ){
-            return `이 자료구조에는 더 이상 데이터가 존재하지 않습니다`
+            console.log(`이 자료구조에는 더 이상 데이터가 존재하지 않습니다`)
+            return this
         }
 
         else{
-            return `아직 이 자료구조에는 ${this.array.length} 개의 데이터가 남아있습니다`
+
+            console.log(`이 자료구조에는 아직 데이터가 남아있습니다`)
+
+            if(this.array.length == this.size){
+                this.isFull()
+            }
+
+            else{
+                console.log(`아직 이 자료구조에는 ${this.array.length} 개의 데이터가 남아있습니다`)
+                return this
+            }
         }
 
     }
@@ -79,7 +98,8 @@
     isFull = () => {
 
         if( this.array.length >= this.size ){
-            return '이 자료구조는 이미 꽉 찼습니다'
+            console.log('이 자료구조는 이미 꽉 찼습니다')
+            return this
         }
 
         else if( this.array.length != this.size ){
@@ -92,9 +112,24 @@
 
  let Stack_Example = new Stack(Dummy_Data)
 
-console.log(Stack_Example)
 
 Stack_Example.pop()
 Stack_Example.push(99)
+Stack_Example.peek()
 Stack_Example.isEmpty()
 Stack_Example.isFull()
+
+Stack_Example.pop()
+Stack_Example.pop()
+Stack_Example.pop()
+console.log(Stack_Example.array)
+
+Stack_Example.pop()
+Stack_Example.pop()
+Stack_Example.pop()
+
+// stack 자료구조는,
+// * 실행취소
+// * 웹 뒤로 가기
+// * 역순 문자열 만들기
+// 등의 예시들로 쓰인다
