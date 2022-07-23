@@ -123,6 +123,24 @@ Queue_Example.peek()
 Queue_Example.enqueue(99)
 Queue_Example.Size()
 
+Queue_Example.dequeue()
+Queue_Example.dequeue()
+Queue_Example.dequeue()
+Queue_Example.dequeue()
+Queue_Example.dequeue()
+Queue_Example.dequeue()
+Queue_Example.display()
+Queue_Example.enqueue(99)
+Queue_Example.enqueue(99)
+Queue_Example.enqueue(99)
+Queue_Example.enqueue(99)
+Queue_Example.enqueue(99)
+Queue_Example.enqueue(99)
+Queue_Example.enqueue(99)
+Queue_Example.display()
+
+
+
 
 // queue 의 자료구조는,
 // * 대기줄/대기표

@@ -28,7 +28,7 @@ export default function App() {
         // css 문법에서의 background-color 를 backgroundColor 로
         //  해당 css 기능이 적용이 가능하게끔 한다
         
-        }>amaba_culture, {State}</Text>
+        }>hi daddy, {State}</Text>
       {/* ㄴ? text display 를 하기 위한 태그 */}
 
       <Button 

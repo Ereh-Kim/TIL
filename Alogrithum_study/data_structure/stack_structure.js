@@ -74,7 +74,7 @@
 
     isEmpty = () => {
 
-        if( this.array.length == 0 ){
+        if( this.array.length === 0 ){
             console.log(`이 자료구조에는 더 이상 데이터가 존재하지 않습니다`)
             return this
         }
