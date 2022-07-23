@@ -28,35 +28,39 @@ class Queue {
 
     dequeue = () => {
 
-      this.isEmpty()
+    if(this.array.length === 0){
+      this.isEmpty()}
 
-      console.log(`이 자료구조에 에서 front 값인 ${this.array[0]} 가 삭제되었습니다`)
+    else{console.log(`이 자료구조에 에서 front 값인 ${this.array[0]} 가 삭제되었습니다`)
 
       this.array.shift()
       this.front = this.array[this.array.length-1]
 
-      return this
+      return this}
     }
 
     enqueue = (input) => {
 
-        this.isFull()
+        if(this.array.length === this.size){
+        this.isFull()}
 
+        else{
         this.array.push(input)
         this.rear = this.array[this.array.length-1]
 
         console.log(`이 자료구조에 ${this.rear} 이 rear 값으로써 새롭게 추가되었습니다`)
 
-        return this
+        return this}
     }
 
     peek = () => {
+        if(this.array.length === 0){
+        this.isEmpty()}
 
-        this.isEmpty()
-
+        else{
         console.log(`이 자료구조의 현 front 값은 ${this.front} 입니다`)
 
-        return this
+        return this}
 
     }
 
@@ -130,6 +134,7 @@ Queue_Example.dequeue()
 Queue_Example.dequeue()
 Queue_Example.dequeue()
 Queue_Example.display()
+Queue_Example.peek()
 Queue_Example.enqueue(99)
 Queue_Example.enqueue(99)
 Queue_Example.enqueue(99)

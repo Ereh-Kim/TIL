@@ -4,12 +4,14 @@
 // 그 중에서도, 양방향으로만 연결되어있는 'Linked_List' 를
 // 'Doubly_Linked_List' 라고 한다
 
+// add, remove, size, display, search 의 단계들을 통해 관리된다
+
  class Doubly_Linked_List_Node {
 
-    constructor( Next_Node, Previous_Node, headValue ){
+    constructor( Next_Node, Previous_Node, name ){
         this.Next_Node = Next_Node
         this.Previous_Node = Previous_Node
-        this.headValue = headValue
+        this.name = name
     }
 
     LinkAs_Previous = (input) => {
@@ -50,13 +52,13 @@
     B1.LinkAs_Previous(C1)
     A1.LinkAs_Previous(B1)
 
-console.log(`B1 은 Next_Node 로 ${B1.Next_Node.headValue} 와 연결되어 있습니다`)
-console.log(`C1 은 Next_Node 로 ${C1.Next_Node.headValue} 와 연결되어 있습니다`)
+console.log(`B1 은 Next_Node 로 ${B1.Next_Node.name} 와 연결되어 있습니다`)
+console.log(`C1 은 Next_Node 로 ${C1.Next_Node.name} 와 연결되어 있습니다`)
 
-console.log(`B1 은 Previous_Node 로 ${B1.Previous_Node.headValue} 와 연결되어 있습니다`)
-console.log(`A1 은 Previous_Node 로 ${A1.Previous_Node.headValue} 와 연결되어 있습니다`)
+console.log(`B1 은 Previous_Node 로 ${B1.Previous_Node.name} 와 연결되어 있습니다`)
+console.log(`A1 은 Previous_Node 로 ${A1.Previous_Node.name} 와 연결되어 있습니다`)
 
-console.log(` C1 => ${C1.Next_Node.headValue} => ${B1.Next_Node.headValue} 순으로 연결되었습니다 `)
+console.log(` C1 => ${C1.Next_Node.name} => ${B1.Next_Node.name} 순으로 연결되었습니다 `)
 
 // Doubly_linkedList 가 새롭게 node 를 추가하는 과정
 
@@ -64,19 +66,23 @@ console.log(` C1 => ${C1.Next_Node.headValue} => ${B1.Next_Node.headValue} 순�
     B2.Insert_Node(B1, C1)
 
 
-    console.log(`B2 의 Next_Node 로 ${B2.Next_Node.headValue} 와 새롭게 연결했습니다`)
-    console.log(`B2 의 Previous_Node 로 ${B2.Previous_Node.headValue} 와 새롭게 연결했습니다`)    
+    console.log(`B2 의 Next_Node 로 ${B2.Next_Node.name} 와 새롭게 연결했습니다`)
+    console.log(`B2 의 Previous_Node 로 ${B2.Previous_Node.name} 와 새롭게 연결했습니다`)    
 
-    console.log(`C1 의 Next_Node 로 ${C1.Next_Node.headValue} 와 새롭게 연결했습니다`)
-    console.log(`B1 의 Previous_Node 로 ${B1.Previous_Node.headValue} 와 새롭게 연결했습니다`)
+    console.log(`C1 의 Next_Node 로 ${C1.Next_Node.name} 와 새롭게 연결했습니다`)
+    console.log(`B1 의 Previous_Node 로 ${B1.Previous_Node.name} 와 새롭게 연결했습니다`)
 
-    console.log(` C1 => ${C1.Next_Node.headValue} => ${B2.Next_Node.headValue} => ${B1.Next_Node.headValue} 순으로 연결되었습니다 `)
+    console.log(` C1 => ${C1.Next_Node.name} => ${B2.Next_Node.name} => ${B1.Next_Node.name} 순으로 연결되었습니다 `)
 
 // Doubly_linkedList 가 기존의 node 를 삭제하는 과정
 
     B2.Delete_Node(B1,C1)
 
-    console.log(`C1 의 Next_Node 로 ${C1.Next_Node.headValue} 와 새롭게 연결했습니다`)
-    console.log(`B1 의 Previous_Node 로 ${B1.Previous_Node.headValue} 와 새롭게 연결했습니다`)
+    console.log(`C1 의 Next_Node 로 ${C1.Next_Node.name} 와 새롭게 연결했습니다`)
+    console.log(`B1 의 Previous_Node 로 ${B1.Previous_Node.name} 와 새롭게 연결했습니다`)
 
-    console.log(` C1 => ${C1.Next_Node.headValue} => ${B2.Next_Node.headValue} => ${B1.Next_Node.headValue} 순으로 연결되었습니다 `)
+    console.log(` C1 => ${C1.Next_Node.name} => ${B2.Next_Node.name} => ${B1.Next_Node.name} 순으로 연결되었습니다 `)
+
+    // 실제 사례로는,
+    // ㄴ> * 음악 플레이 목록
+    // 이 있겠다

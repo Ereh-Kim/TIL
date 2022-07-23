@@ -49,8 +49,10 @@
 
     push = (input) => {
 
-        this.isFull()
+        if(this.array.length === this.size){
+        this.isFull()}
 
+        else{
         console.log(
             `${input}이/가 자료구조에 insert 되었습니다`
             )
@@ -59,7 +61,7 @@
         const Renewed_Top = this.array[this.array.length-1]
         this.top = Renewed_Top
 
-        return this
+        return this}
     }
 
     peek = () => {
