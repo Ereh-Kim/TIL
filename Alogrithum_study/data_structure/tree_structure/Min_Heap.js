@@ -1,3 +1,9 @@
+
+// Binary Tree 구조를 기반으로,
+// Parent node 보다 큰 child node 만을 가진 자료구조를 => 'Min Heap'
+// 라고 한다
+
+
 class BST_Node {
     constructor(value){
         this.value = value

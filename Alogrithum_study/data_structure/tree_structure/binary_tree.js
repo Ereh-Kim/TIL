@@ -2,7 +2,7 @@
 // 부모 - 자식 관계의 맺음을 중심으로, 
 // 관리되는 자료구조 => 'tree'
 
-// 그중에서도 child 를 두 개 이상 가져가지 않는 'tree' 구조를
+// 그중에서도 child 를 세 개 이상 가져가지 않는 'tree' 구조를
 // 'Binary Tree' 구조라고 합니다
 
 class Binary_Tree_Node {
@@ -53,6 +53,7 @@ class Binary_Tree_Structure {
         }
 
     }
+
         }
     
         const Binary_Tree_Node_Example = new Binary_Tree_Structure()
@@ -62,7 +63,7 @@ class Binary_Tree_Structure {
         Binary_Tree_Node_Example.insert(4)
         Binary_Tree_Node_Example.insert(5)
 
-        console.log(Binary_Tree_Node_Example)
+        // console.log(Binary_Tree_Node_Example)
 
 
 // console.log(Binary_Tree_Node_Example, ` Binary Tree 구조의 예시입니다`)

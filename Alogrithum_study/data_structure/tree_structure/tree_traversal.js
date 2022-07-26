@@ -78,6 +78,19 @@ class BST {
                 this.postOrederHelper(this.root)
             }
 
+            postOrederHelper_demo_find = (current_root,value)=>{
+                if(current_root !== null){
+                    this.postOrederHelper_demo_find(current_root.left,value)
+                    this.postOrederHelper_demo_find(current_root.right,value)
+                    if(current_root.value == value)
+                    {console.log(current_root.value)}
+                }
+            }    
+            
+            postOrder_demo_find = (value)=>{
+                this.postOrederHelper_demo_find(this.root,value)
+            }
+
 }
 
 const BST_Example = new BST
@@ -101,5 +114,9 @@ BST_Example.insert(4.5)
 // BST_Example.preOrder()
 // console.log(`ㄴ> preorder traversal 의 예시입니다`)
 
-BST_Example.postOrder()
-console.log(`ㄴ> postorder traversal 의 예시입니다`)
+// BST_Example.postOrder()
+// console.log(`ㄴ> postorder traversal 의 예시입니다`)
+
+
+BST_Example.postOrder_demo_find(5)
+BST_Example.postOrder_demo_find(99)

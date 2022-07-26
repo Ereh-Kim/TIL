@@ -31,14 +31,18 @@ class BST {
                 return this
             }
 
-                current = current.left
+                else{
+                current = current.left}
                 
-            } else{
+            }
+             else{
                 if(current.right === null){
                     current.right = New_Node;
                     return this;
                 }
-                current = current.right
+
+                else{
+                current = current.right}
             }
         } 
     }
