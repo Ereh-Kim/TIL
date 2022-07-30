@@ -141,6 +141,40 @@ class Node {
         return visited
       }
 
+      display_adj_list_way =() =>{
+
+        let display = this.nodes
+        let i = 0
+
+        while(this.nodes[i] != undefined){
+            display[i] = this.nodes[i].adjacents
+            i++
+        }
+
+        return display
+      }
+
+    //   display_adj_matrix_way =() =>{
+
+    //     let source =this.display_adj_list_way()
+    //     let Contain_Nodes =[]
+    //     let Contain_Edges = []
+    //     let display = []
+    //     let t=0;
+
+    //     for(let element in source){
+    //         Contain_Nodes.push(element)
+    //     }
+
+    //     for(let edges in source){
+    //         Contain_Edges.push(source[edges])
+    //     }
+
+    //     return display
+
+    //   }
+      
+
   }
 
     const Graph_Example = new Graph_UNDIRECTED()
@@ -169,4 +203,6 @@ class Node {
 
     // console.log(Graph_Example.nodes)
     // console.log(Graph_Example.DFS(0))
-    console.log(Graph_Example.BFS(0))
+    // console.log(Graph_Example.BFS(0))
+    console.log(Graph_Example.display_adj_matrix_way())
+
