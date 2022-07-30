@@ -154,25 +154,44 @@ class Node {
         return display
       }
 
-    //   display_adj_matrix_way =() =>{
+      display_adj_matrix_way =() =>{
 
-    //     let source =this.display_adj_list_way()
-    //     let Contain_Nodes =[]
-    //     let Contain_Edges = []
-    //     let display = []
-    //     let t=0;
+        let source =this.display_adj_list_way()
+        let Contain_Nodes =[]
+        let Contain_Edges = []
+        let display = []
+        let section = []
+        let t=0;
 
-    //     for(let element in source){
-    //         Contain_Nodes.push(element)
-    //     }
+        for(let element in source){
+            Contain_Nodes.push(Number(element))
+        }
 
-    //     for(let edges in source){
-    //         Contain_Edges.push(source[edges])
-    //     }
+        for(let edges in source){
+            Contain_Edges.push(source[edges])
+        }
 
-    //     return display
+        for(let i=0; i<Contain_Edges.length; i++){
+            while(Contain_Nodes[t] != undefined){
 
-    //   }
+                if(Contain_Edges[i].includes(Contain_Nodes[t])){
+                    section.push(1)
+                    t++
+                }
+                else if(!Contain_Edges[i].includes(Contain_Nodes[t])){
+                    section.push(0)
+                    t++
+                }
+            }
+            display.push(section)
+            t=0
+            section =[]
+            }
+            return display
+        }
+
+        
+      
       
 
   }
@@ -204,5 +223,6 @@ class Node {
     // console.log(Graph_Example.nodes)
     // console.log(Graph_Example.DFS(0))
     // console.log(Graph_Example.BFS(0))
-    console.log(Graph_Example.display_adj_matrix_way())
+    // console.log(Graph_Example.display_adj_matrix_way())
+    // console.log(Graph_Example.display_adj_list_way())
 
