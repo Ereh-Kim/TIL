@@ -22,10 +22,6 @@ class Graph {
 
     DFS(Start_Point) {
 
-        let Need_Visit = this.nodes
-        let Visited = []
-        let i =0;
-        this.DFS_Helper1(Start_Point, Visited, Need_Visit, i)
     }
 }
 
@@ -44,4 +40,4 @@ class Graph {
 
     // console.log(Graph_Example)
 
-    Graph_Example.DFS(1)
+   //  Graph_Example.DFS(1)

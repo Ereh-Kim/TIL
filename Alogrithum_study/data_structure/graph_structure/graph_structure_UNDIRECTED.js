@@ -85,7 +85,7 @@ class Node {
 
     }
 
-    dfs = (Start_Node) => {
+    DFS = (Start_Node) => {
         
         // let visited = {};
         let visited = [];
@@ -96,21 +96,49 @@ class Node {
         Start_dfs;
 
         while(Helper_Stack.length !== 0){
-          let node = Helper_Stack.pop();
-          node;
+          let Poped_Node = Helper_Stack.pop();
+          Poped_Node;
 
           if(
-            // visited[node] == undefined
-            !visited.includes(node)
+            // visited[Poped_Node] == undefined
+            !visited.includes(Poped_Node)
             ){
             // Turn++
-            // visited[node] = `${node} is visited as turn ${Turn}`
-            visited.push(node)
-            Helper_Stack = [...Helper_Stack, ...this.nodes[node].adjacents];
+            // visited[Poped_Node] = `${Poped_Node} is visited as turn ${Turn}`
+            visited.push(Poped_Node)
+            Helper_Stack = [...Helper_Stack, ...this.nodes[Poped_Node].adjacents];
             
           }
         }
         return visited;
+      }
+
+      BFS = (Start_Node) => {
+
+        // let visited = {};
+        let visited = [];
+        let Helper_Queue = [];
+        // let Turn = 0;
+        
+        let Start_bfs = Helper_Queue.push(Start_Node)
+        Start_bfs;
+
+        while(Helper_Queue.length !== 0){
+            
+            let Dequeued_Node = Helper_Queue.shift(0,1)
+            Dequeued_Node;
+
+            if(
+                // visited[Dequeued_Node] == undefined
+                !visited.includes(Dequeued_Node)
+                ){
+                // Turn++
+                // visited[Dequeued_Node] = `${Dequeued_Node} is visited as turn ${Turn}`
+                visited.push(Dequeued_Node)
+                Helper_Queue = [...Helper_Queue, ...this.nodes[Dequeued_Node].adjacents]
+            }
+        }
+        return visited
       }
 
   }
@@ -140,4 +168,5 @@ class Node {
     Graph_Example.addEdge(6,8)
 
     // console.log(Graph_Example.nodes)
-    console.log(Graph_Example.dfs(0))
+    // console.log(Graph_Example.DFS(0))
+    console.log(Graph_Example.BFS(0))
