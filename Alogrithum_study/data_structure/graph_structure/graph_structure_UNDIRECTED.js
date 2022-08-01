@@ -224,5 +224,5 @@ class Node {
     // console.log(Graph_Example.DFS(0))
     // console.log(Graph_Example.BFS(0))
     // console.log(Graph_Example.display_adj_matrix_way())
-    // console.log(Graph_Example.display_adj_list_way())
+    console.log(Graph_Example.display_adj_list_way())
 

@@ -76,6 +76,42 @@ class Graph_DIRECTED {
       return display
     }
 
+    display_adj_matrix_way =() =>{
+
+      let source =this.display()
+      let Contain_Nodes =[]
+      let Contain_Edges = []
+      let display = []
+      let section = []
+      let t=0;
+
+      for(let element in source){
+          Contain_Nodes.push(Number(element))
+      }
+
+      for(let edges in source){
+          Contain_Edges.push(source[edges])
+      }
+
+      for(let i=0; i<Contain_Edges.length; i++){
+          while(Contain_Nodes[t] != undefined){
+
+              if(Contain_Edges[i].includes(Contain_Nodes[t])){
+                  section.push(1)
+                  t++
+              }
+              else if(!Contain_Edges[i].includes(Contain_Nodes[t])){
+                  section.push(0)
+                  t++
+              }
+          }
+          display.push(section)
+          t=0
+          section =[]
+          }
+          return display
+      }
+
 }
 
 
@@ -97,7 +133,7 @@ class Graph_DIRECTED {
     Graph_Example.addEdge(7,5)
 
    //  console.log(Graph_Example)
-    console.log(Graph_Example.display())
+    console.log(Graph_Example.display_adj_matrix_way())
 
    //  console.log(Graph_Example.DFS(1))
    //  console.log(Graph_Example.BFS(1))
