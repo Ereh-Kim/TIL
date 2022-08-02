@@ -201,9 +201,9 @@ Doubly_Linked_List_Example.Insert_Node_Before_('A1','A0')
 Doubly_Linked_List_Example.add_Node_AtHead('B0')
 
 
-// console.log(Doubly_Linked_List_Example)
+console.log(Doubly_Linked_List_Example.find_Node('A0'))
 console.log(Doubly_Linked_List_Example.show_List())
-console.log(Doubly_Linked_List_Example.size)
+console.log(Doubly_Linked_List_Example)
 
 
     // 실제 사례로는,
