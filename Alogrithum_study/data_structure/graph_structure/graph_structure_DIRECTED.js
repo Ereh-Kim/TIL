@@ -1,3 +1,26 @@
+/*
+ 'vertex' 라고 불리는 Node 들을
+ 'edge' 라는 관계도로 표현하는 자료구조 => 'Graph 구조' 
+
+'edge' 에 내포된 자체적인 값의 유무에 따라
+'weight' 혹은 'unweighted' 라고 하는 수식어를 붙히고
+ 
+'edge' 의 방향성 유무에 따라
+'directed' 혹은 'undirected' 라고 하는 수식어를 붙힙니다
+
+또, 이 중에서도
+'edge' 의 관계도가 순회하도록 된 'graph' 구조는 
+'cyclic' 이라는 수식어가 붙습니다
+
+'Graph' 자료구조는 크게,
+    ㄴ> add_Vertex, add_Edge, 
+    ㄴ> BFS( B First Search )
+    ㄴ> DFS( Depth First Search )
+    ㄴ> Display_adjacency_matrix_way
+    ㄴ> Display_adjacency_list_way
+    
+    의 단계들을 통해 관리된다
+*/
 
 class Graph_DIRECTED {
     constructor() {
