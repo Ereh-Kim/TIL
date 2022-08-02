@@ -110,6 +110,7 @@ class Linked_List {
         if(Current_Node != null){
             Insert_Node.next = Current_Node.next
             Current_Node.next = Insert_Node
+            this.size++
         }
         else{
             console.log(`추가하실 Node(${Insert_Node})와 연결할 Node(${target})가 현재 linkedlist 자료구조에 없습니다`)
@@ -125,7 +126,7 @@ class Linked_List {
         if(target === this.head){
             Insert_Node.next = Current_Node
             this.list = Insert_Node
-            return;
+            this.size++
         }
 
         else if(target !== this.head){
@@ -138,7 +139,7 @@ class Linked_List {
 
         Insert_Node.next = Current_Node
         PreOrder_Node.next = Insert_Node
-
+        this.size++
         }
         else{
          console.log(`추가하실 Node(${Insert_Node.data})와 연결할 Node(${target})가 현재 linkedlist 자료구조에 없습니다`)
@@ -161,10 +162,12 @@ class Linked_List {
         if(Current_Node != null){
             if(PreOrder_Node.data != data){
                 PreOrder_Node.next = Current_Node.next
-        }
+                this.size--
+            }
             else{
                 Current_Node = Current_Node.next
                 this.list = Current_Node
+                this.size--
             }
         }
         else{
@@ -190,8 +193,11 @@ Linked_List_Example.Insert_Node_Before_('C1','C0')
 
 Linked_List_Example.Remove_Node('D1')
 console.log(Linked_List_Example.showList())
+console.log(Linked_List_Example.search_Node('A1'))
 console.log(Linked_List_Example.head)
 console.log(Linked_List_Example.tail)
+console.log(Linked_List_Example.size)
+
 
 
 // 실제 사례로는,
