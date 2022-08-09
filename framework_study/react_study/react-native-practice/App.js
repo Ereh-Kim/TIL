@@ -1,15 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { 
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  ScrollView,
+  FlatList } from 'react-native';
 import { useState } from 'react';
+import {styles} from './components/stylesheet.js'
+// import Delete_list from './components/delete_list.js';
 
 export default function App() {
 
-  const [State, updateState] = useState("")
+  const [State, updateState] = useState('')
+  const [ListManager, updateList] = useState([])
 
-  const TestHook = (e) => {
+  const Adding_list = () => {
+    updateList([...ListManager,State])
+  }
+
+  const Delete_list_helper=(target)=>{
+    const Deleted = ListManager.filter(e => e != target)
+    updateList([...Deleted])
     
-    updateState(e)
-
   }
 
   return (
@@ -17,10 +31,15 @@ export default function App() {
     <View style={styles.BodyLayout}>
       {/* ㄴ> web 상의 div 와 같은 ( container ) 역할군을 함 */}
 
+
+      
       <TextInput 
+      onChangeText={(text)=>{updateState({id: text,value: text})}}
       style={styles.flex1}
       placeholder='place_your_email'
-      onChangeText={TestHook}/>
+      />
+
+    
 
       <Text style={
         {flex:4, borderColor: 'black', borderWidth: 2}
@@ -28,12 +47,38 @@ export default function App() {
         // css 문법에서의 background-color 를 backgroundColor 로
         //  해당 css 기능이 적용이 가능하게끔 한다
         
-        }>hi daddy, {State}</Text>
+        }>hi daddy, {State.value}</Text>
       {/* ㄴ? text display 를 하기 위한 태그 */}
+
+      {/* <View style={styles.container}>
+      <ScrollView> */}
+        
+        {/* {ListManager.map(list => <Text key={list}> {list} </Text>)} */}
+        
+      {/* </ScrollView> */}
+      {/* ㄴ> ScrollView tag는 어떠한 영역 내에서 scroll down 을 할 수 있게끔하는 tag이다 */}
+      {/* </View> */}
+
+      <View style={styles.container}>
+
+      <FlatList
+      data={ListManager}
+      renderItem={(Sended_Data)=>{
+        return(
+          <Button
+          title='test'
+          value={Sended_Data.item.value}
+          />
+        )
+      }} />
+
+      </View>
 
       <Button 
       title='Tap here'
-      style={styles.TestingStyle} />
+      style={styles.TestingStyle}
+      onPress={Adding_list}
+       />
 
     </View>
     //ㄴ> View, Text 와 같은 태그를 쓰는 이유
@@ -41,51 +86,3 @@ export default function App() {
     //          Dom Element 이 사용/구현되지 않는다
   );
 }
-
-const styles = StyleSheet.create({
-
-  // ㄴ> stylesheet 태그의 create method 는
-  //      ㄴ=> react-native 의 stylesheet object 를 반환한다 
-
-  // 이때, argument 로 
-  // 적용할 style 에 대해 object 형태로 넣는다/적용한다
-  
-  BodyLayout: {
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    margin: 30,
-    height: '80%'
-  },
-
-  TestingStyle: {
-    width: '80%',
-    backgroundColor: 'yellow',
-    padding: 5,
-    textAlign: 'center',
-    borderWidth: 3,
-    borderColor: 'black',
-    borderRadius: 15
-  },
-
-  flex1: {
-    flex: 4,
-    borderColor: 'black',
-    borderWidth: 2,
-  },
-
-  flex2:{
-    flex:2,
-    borderColor: 'black',
-    borderWidth: 2,
-  }
-
-  // flex 는 web 에서 grid 와 같은 맥락이라고 이해하면 쉅다.
-  // 공간을 분할해서, 얼만큼의 공간만큼을 차지할지를 비율로 표시한다
-
-});
-
-// react-native 에는 css 파일이 존재하지 않는다/지원되지 않는다
-// ㄴ> 이유도 단순하다, web 환경이 아니기 때문이다
-
-// 오직, js object 로만 전달 가능
