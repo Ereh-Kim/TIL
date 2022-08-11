@@ -26,6 +26,7 @@ typescript 고유의 자료형들이 존재한다
 이 있다
 
 */
+var _a;
 // 1*. any 
 let sales = 123456;
 let course = 'TypeScript';
@@ -235,5 +236,18 @@ function getCustomer(id) {
     return id === 0 ? null : { birthday: new Date() };
 }
 let customer = getCustomer(1);
-console.log(customer === null || customer === void 0 ? void 0 : customer.birthday);
+console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
+let log = null;
+log === null || log === void 0 ? void 0 : log('a');
+/*
+    위의 예시는,
+
+    typescript / js 의 optional chaining 을 적용시킨 예시입니다.
+    
+    optional chaining 은,
+    
+     ? 를 기입해,
+    해당 변수나 배열, 객체 가 null 이거나 undefined 가 아닐시,
+    값을 가져오거나 접근할 수 있도록 한 방법론입니다
+*/ 
 //# sourceMappingURL=index.js.map
