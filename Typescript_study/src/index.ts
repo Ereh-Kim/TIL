@@ -315,3 +315,103 @@ kgToLBs(weight);
 
 // 2*-2. intersection types
 
+type Draggable = {
+    darg: () => void
+}
+
+type Resizable = {
+    resize: () => void
+}
+
+type UIWiddget = Draggable & Resizable
+
+let textBox: UIWiddget = {
+    darg: () => {},
+    resize: () => {}
+}
+
+/*
+    위의 예시는,
+
+    typescript 의 고유 자료형인, intersection 을
+    적용시킨 type 입니다
+    
+    intersection 은,
+    서로 다른 type 을 하나로 묶는 자료형입니다.
+*/
+
+// 3*.Literal type
+
+type Quantity = 50 | 100;
+let quantity: Quantity = 50;
+quantity = 100
+
+type Metric = 'cm' | 'inch'
+let metric: Metric = 'cm'
+metric = 'inch'
+
+/*
+
+변수에 지정하는 자료형의 수 혹은 값을 제한하고 싶을 때가 있다.
+
+이때, 사용하는 것이
+Literal type 이다
+
+보기에 따라서,
+union type 의 연장선으로도 보여진다.
+
+Literal type 은 이처럼,
+가져갈 수 있는 명확한 값 혹은 자료형을 union 으로 묶어둠으로써,
+제한된 형태의 type 을 제공 및 보여주는 자료형이다
+
+*/
+
+// 4*.nullable type
+
+function greet(name: string | null){
+    if(name){
+        console.log(name.toUpperCase())}
+    else{
+        console.log('Hola!')
+    }
+}
+
+greet(null)
+
+/*
+    위의 예시는,
+
+    typescript 의 고유 자료형인, 
+    nullable type 입니다
+    
+    nullable type 은,
+    null 을 값으로 지닌 자료형입니다.
+*/
+
+// 번외) optional chaining
+
+type Customer = {
+    birthday: Date
+}
+
+function getCustomer(id: number): Customer | null{
+    return id === 0 ? null : {birthday: new Date()}
+}
+let customer = getCustomer(1)
+
+console.log(customer?.birthday?.getFullYear())
+
+let log:any = null
+log?.('a')
+
+/*
+    위의 예시는,
+
+    typescript / js 의 optional chaining 을 적용시킨 예시입니다.
+    
+    optional chaining 은,
+    
+     ? 를 기입해,
+    해당 변수나 배열, 객체 가 null 이거나 undefined 가 아닐시,
+    값을 가져오거나 접근할 수 있도록 한 방법론입니다
+*/

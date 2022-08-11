@@ -186,6 +186,9 @@ let employee1 = {
 
 */
 // 2*. unions and intersections
+// 2*-1. union types
+let weight = 30;
+weight = '30';
 function kgToLBs(weight) {
     if (typeof weight === 'number') {
         return weight * 2;
@@ -194,14 +197,43 @@ function kgToLBs(weight) {
         return parseInt(weight) * 2.2;
     }
 }
+kgToLBs(weight);
+let textBox = {
+    darg: () => { },
+    resize: () => { }
+};
+let quantity = 50;
+quantity = 100;
+let metric = 'cm';
+metric = 'inch';
 /*
-    위의 예시는,
 
-    typescript 의 고유 자료형인, union 을
-    적용시킨 function 입니다
-    
-    union 은,
-    하나의 변수 혹은 function 의 하나의 parameter 에
-    자료형을 한가지 이상 지정해 줄 수 있는 자료형입니다
+변수에 지정하는 자료형의 수 혹은 값을 제한하고 싶을 때가 있다.
+
+이때, 사용하는 것이
+Literal type 이다
+
+보기에 따라서,
+union type 의 연장선으로도 보여진다.
+
+Literal type 은 이처럼,
+가져갈 수 있는 명확한 값 혹은 자료형을 union 으로 묶어둠으로써,
+제한된 형태의 type 을 제공 및 보여주는 자료형이다
+
 */
+// 4*.nullable type
+function greet(name) {
+    if (name) {
+        console.log(name.toUpperCase());
+    }
+    else {
+        console.log('Hola!');
+    }
+}
+greet(null);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(1);
+console.log(customer === null || customer === void 0 ? void 0 : customer.birthday);
 //# sourceMappingURL=index.js.map
