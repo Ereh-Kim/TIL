@@ -130,16 +130,21 @@ public 은 선언을 할 수 있으나,
 ( public 은,
 자유롭게 참조하거나,
 instance 를 생성할 때,
-property 으로의 접근을 자유롭게 허용하도록 한다 )
+member 변수 으로의 접근을 자유롭게 허용하도록 한다 )
 
 */
 
 class Car_access_modified{
     
     name: string = 'car'
+    
     private private_data: string = 'this is not a car'
     // ㄴ> #private_data 로도 표기 가능
+
     protected protected_data: string = 'Top_secret => I am human! '
+    
+    static static_data: string = 'we`re upgrading our class'
+
     color:string;
     constructor(color:string){
         this.color = color
@@ -162,10 +167,10 @@ class Bmw_access_modified extends Car_access_modified{
     /*
     ㄴ> private 접근 제한자를 통해서,
         자식 class 에서의,
-        해당 private 을 주석 달은 데이터에 대한 접근이
+        해당 private 을 주석 달은 member 변수에 대한 접근이
         제한되게 된다.
 
-        Car_access_modified class 내에서만
+        해당 Car_access_modified class 내에서만
         접근할 수 있게 된다
     */
 
@@ -179,9 +184,11 @@ const z4 = new Bmw_access_modified('black')
     /*
     ㄴ> protected 접근 제한자가
         
-        자식 class 에서도,
-        해당 protected 를 주석 달은 데이터의 상속까지
+        자식 class 에서의,
+        해당 protected 를 주석 달은 member 변수의 상속 및 접근까지
         제어하지 않으나,
 
         instance 를 통한 접근을 제어하게 된다
     */  
+
+console.log(Car_access_modified.static_data)

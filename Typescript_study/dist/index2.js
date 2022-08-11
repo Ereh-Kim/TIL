@@ -82,7 +82,7 @@ public 은 선언을 할 수 있으나,
 ( public 은,
 자유롭게 참조하거나,
 instance 를 생성할 때,
-property 으로의 접근을 자유롭게 허용하도록 한다 )
+member 변수 으로의 접근을 자유롭게 허용하도록 한다 )
 
 */
 class Car_access_modified {
@@ -98,28 +98,23 @@ class Car_access_modified {
         console.log('this is my secret... pls...' + this.private_data);
     }
 }
+Car_access_modified.static_data = 'we`re upgrading our class';
 class Bmw_access_modified extends Car_access_modified {
     constructor(color) {
         super(color);
     }
-    // showPrivate(){
-    //     console.log(super.private_data)
-    // }
-    // ㄴ> private 접근 제한자로 인해 에러가 발생
-    /*
-    ㄴ> private 접근 제한자를 통해서,
-        자식 class 에서의,
-        해당 private 을 주석 달은 데이터에 대한 접근이
-        제한되게 된다.
-
-        Car_access_modified class 내에서만
-        접근할 수 있게 된다
-    */
-    showTopSecret() {
-        console.log(this.protected_data);
-    }
 }
 const z4 = new Bmw_access_modified('black');
 // console.log(z4.protected_data)
-z4.showTopSecret();
+// ㄴ> protected 접근 제한자로 인해, 에러가 발생
+/*
+ㄴ> protected 접근 제한자가
+    
+    자식 class 에서의,
+    해당 protected 를 주석 달은 member 변수의 상속 및 접근까지
+    제어하지 않으나,
+
+    instance 를 통한 접근을 제어하게 된다
+*/
+console.log(Car_access_modified.static_data);
 //# sourceMappingURL=index2.js.map
