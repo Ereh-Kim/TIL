@@ -82,7 +82,7 @@ public 은 선언을 할 수 있으나,
 ( public 은,
 자유롭게 참조하거나,
 instance 를 생성할 때,
-member 변수 으로의 접근을 자유롭게 허용하도록 한다 )
+property 으로의 접근을 자유롭게 허용하도록 한다 )
 
 */
 class Car_access_modified {
@@ -98,7 +98,6 @@ class Car_access_modified {
         console.log('this is my secret... pls...' + this.private_data);
     }
 }
-Car_access_modified.static_data = 'we`re upgrading our class';
 class Bmw_access_modified extends Car_access_modified {
     constructor(color) {
         super(color);
@@ -111,10 +110,18 @@ const z4 = new Bmw_access_modified('black');
 ㄴ> protected 접근 제한자가
     
     자식 class 에서의,
-    해당 protected 를 주석 달은 member 변수의 상속 및 접근까지
+    해당 protected 를 주석 달은 property의 상속 및 접근까지
     제어하지 않으나,
 
     instance 를 통한 접근을 제어하게 된다
 */
 console.log(Car_access_modified.static_data);
+/*
+ㄴ> static 을,
+    
+    class 의 특정 property 및 method 에 달게 되면
+    
+    class 자료형 임에도 전역변수의 형태로,
+    method 를 호출하거나 property 값을 가져올 수끔 해준다.
+*/ 
 //# sourceMappingURL=index2.js.map

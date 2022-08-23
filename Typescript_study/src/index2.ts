@@ -5,7 +5,7 @@ typescript 문법에 대해 다루는 ts file 이다
 
 */
 
-// void
+// 1*.void
 
 function Void_Function ():void{
     console.log('hello')
@@ -15,7 +15,7 @@ function Void_Function ():void{
 주로 function 에서 반환되는 값이 없음을 표현하는 자료형을 void 라고 한다
 */
 
-// never
+// 2*.never
 
 function showError():never{
     throw new Error();
@@ -31,6 +31,8 @@ function inLoop():never{
 에러를 반환하거나 무한 loop 를 타는 function 을
 나타내는 자료형을 never 라고 한다
 */
+
+// 3*.interface
 
 interface user {
     name: string,
@@ -116,6 +118,8 @@ type aliases 의 제한성을 따라갑니다
 
 */
 
+// 4*. typescript 접근 제한자 
+
 /*
 typescript 에는,
 
@@ -130,7 +134,7 @@ public 은 선언을 할 수 있으나,
 ( public 은,
 자유롭게 참조하거나,
 instance 를 생성할 때,
-member 변수 으로의 접근을 자유롭게 허용하도록 한다 )
+property 으로의 접근을 자유롭게 허용하도록 한다 )
 
 */
 
@@ -143,7 +147,7 @@ class Car_access_modified{
 
     protected protected_data: string = 'Top_secret => I am human! '
     
-    static static_data: string = 'we`re upgrading our class'
+    static static_data: string = 'we`re upgrading our class';
 
     color:string;
     constructor(color:string){
@@ -167,7 +171,7 @@ class Bmw_access_modified extends Car_access_modified{
     /*
     ㄴ> private 접근 제한자를 통해서,
         자식 class 에서의,
-        해당 private 을 주석 달은 member 변수에 대한 접근이
+        해당 private 을 주석 달은 property에 대한 접근이
         제한되게 된다.
 
         해당 Car_access_modified class 내에서만
@@ -185,10 +189,35 @@ const z4 = new Bmw_access_modified('black')
     ㄴ> protected 접근 제한자가
         
         자식 class 에서의,
-        해당 protected 를 주석 달은 member 변수의 상속 및 접근까지
+        해당 protected 를 주석 달은 property의 상속 및 접근까지
         제어하지 않으나,
 
         instance 를 통한 접근을 제어하게 된다
     */  
 
+// static
+
 console.log(Car_access_modified.static_data)
+
+    /*
+    ㄴ> static 을,
+        
+        class 의 특정 property 및 method 에 달게 되면
+        
+        class 자료형 임에도 전역변수의 형태로,
+        method 를 호출하거나 property 값을 가져올 수끔 해준다.
+    */
+
+// 추상 class
+
+abstract class Car_abstract_ver {
+    color: string;
+    constructor(color:string){
+        this.color = color
+    }
+    start(){
+        console.log('start')
+    }
+}
+
+// const car = new Car_abstract_ver("red")
