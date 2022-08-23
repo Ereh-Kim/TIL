@@ -15,7 +15,7 @@ interface User {
 
 // 'keyof' Keyword
 /*
-    ㄴ> 해당 키워드를 사용하면,
+    ㄴ> 해당 utility를 사용하면,
         해당 interface 의 ( property의 ) key 값을
         유니온 형태로 반환 받을 수 있습니다
 */
@@ -31,7 +31,7 @@ type Userkey = keyof User
 
 // 'Partial<T>' Keyword
 /*
-    ㄴ> 해당 키워드를 사용하면,
+    ㄴ> 해당 utility를 사용하면,
         해당 interface 의 property 를
 
         생성되는 instance 에게
@@ -59,7 +59,7 @@ let admine_partial: Partial<User> = {
 
 // 'Required<T>' Keyword
 /*
-    ㄴ> 해당 키워드를 사용하면,
+    ㄴ> 해당 utility를 사용하면,
         해당 interface 의 property 를
 
         생성되는 instance 에게
@@ -88,7 +88,7 @@ let admin_required: Required<User> = {
 
 // 'Readonly<T>' Keyword
 /*
-    ㄴ> 해당 키워드를 사용하면,
+    ㄴ> 해당 utility를 사용하면,
         해당 interface 를 활용해
 
         생성되는 instance 의 property 는
@@ -110,9 +110,13 @@ let admin_readonly: Readonly<User> = {
 
 
 
+
+
+
+
 // 'Record<K,T>' Keyword
 /*
-    ㄴ> 해당 키워드를 사용하면,
+    ㄴ> 해당 utility를 사용하면,
         
     해당 interface 의 
     기입할 key 값의 종류와
@@ -140,8 +144,6 @@ const score: Score = {
 type Grade = 1|2|3|4
 
 type Score_ = 'A'|'B'|'C'|'D'
-//ㄴ> type 으로, interface 도 충분히 올 수 있다
-//    이 예시는, 이해를 위해 쉽게 작성되었다
 
 const Result: Record<Grade,Score_> = {
     1: 'A',
@@ -152,5 +154,62 @@ const Result: Record<Grade,Score_> = {
 
 // ㄴ> 위의 예시는, Record<T> 를 적용한 예시이다
 
-// 'Pick<T,K>' Keyword
 
+
+
+
+
+
+
+
+
+
+// 'Pick<T,K>' Keyword
+/*
+    ㄴ> 해당 utility를 사용하면,
+        해당 interface 의 property 중에서,
+
+        선택적으로
+        property 를 가지는
+        instance 를
+        제한하여 생성할 수 있습니다
+*/
+let admin_pick:Pick<User, 'id' | 'name'> = {
+    id: 0,
+    name: 'Bob'
+}
+
+
+
+
+
+
+// 'Omit<T,K>' Keyword
+/*
+    ㄴ> 해당 utility 를 사용하면,
+        해당 interface 의 property 중에서,
+
+        선택적으로
+        제외할 property 를 지정하여
+        instance 를
+        제한하여 생성할 수 있습니다
+*/
+const admin: Omit<User, 'age'| 'gender'> = {
+    id: 6,
+    name: 'Ben'
+}
+
+
+
+
+
+
+
+// 'Exclude<T1,T2>' Keyword
+/*
+
+*/
+
+type T1 = string | number | boolean
+type T2 = Exclude<T1, number >
+type T3 = Exclude<T1, number| string >
