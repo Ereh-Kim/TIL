@@ -5,14 +5,14 @@
 typescript 문법에 대해 다루는 ts file 이다
 
 */
-// void
+// 1*.void
 function Void_Function() {
     console.log('hello');
 }
 /*
 주로 function 에서 반환되는 값이 없음을 표현하는 자료형을 void 라고 한다
 */
-// never
+// 2*.never
 function showError() {
     throw new Error();
 }
@@ -68,6 +68,7 @@ property 에 대한 제한성은
 type aliases 의 제한성을 따라갑니다
 
 */
+// 4*. typescript 접근 제한자 
 /*
 typescript 에는,
 
@@ -98,6 +99,7 @@ class Car_access_modified {
         console.log('this is my secret... pls...' + this.private_data);
     }
 }
+Car_access_modified.static_data = 'we`re upgrading our class';
 class Bmw_access_modified extends Car_access_modified {
     constructor(color) {
         super(color);
@@ -115,6 +117,7 @@ const z4 = new Bmw_access_modified('black');
 
     instance 를 통한 접근을 제어하게 된다
 */
+// static
 console.log(Car_access_modified.static_data);
 /*
 ㄴ> static 을,
@@ -123,5 +126,37 @@ console.log(Car_access_modified.static_data);
     
     class 자료형 임에도 전역변수의 형태로,
     method 를 호출하거나 property 값을 가져올 수끔 해준다.
-*/ 
+*/
+// 추상 class
+class Car_abstract_ver {
+    constructor(color) {
+        this.color = color;
+    }
+    start() {
+        console.log('start');
+    }
+}
+class Inherit_abstract_ver extends Car_abstract_ver {
+    end() {
+        console.log('end is here!');
+    }
+    doSomething() {
+        alert(3);
+    }
+}
+let New_abstract_Car = new Inherit_abstract_ver('black');
+// const car = new Car_abstract_ver("red")
+// ㄴ> 추상 class 로 인해, 에러 발생
+/*
+
+ㄴ> 추상 class 는 이처럼,
+
+class 로써 적용하면,
+자식 class 를 통한 상속이 가능하지만,
+직접적인 instance 생성을 제한한다
+
+function 혹은 method 로써 적용하면,
+customize 를 필요로 하는 function 혹은 method 로 제한 할 수 있다.
+
+*/
 //# sourceMappingURL=index2.js.map

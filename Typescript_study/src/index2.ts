@@ -218,6 +218,34 @@ abstract class Car_abstract_ver {
     start(){
         console.log('start')
     }
+    abstract doSomething():void
+
 }
 
+class Inherit_abstract_ver extends Car_abstract_ver {
+    end(){
+        console.log('end is here!')
+    }
+    doSomething(): void {
+        alert(3)
+    }
+}
+
+let New_abstract_Car = new Inherit_abstract_ver('black')
+
 // const car = new Car_abstract_ver("red")
+// ㄴ> 추상 class 로 인해, 에러 발생
+
+    /*
+
+    ㄴ> 추상 class 는 이처럼,
+
+    class 로써 적용하면,
+    자식 class 를 통한 상속이 가능하지만,
+    직접적인 instance 생성을 제한한다
+
+    function 혹은 method 로써 적용하면,
+    customize 를 필요로 하는 function 혹은 method 로 제한 할 수 있다.
+
+    */
+
