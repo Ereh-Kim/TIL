@@ -1,7 +1,7 @@
 "use strict";
 /*
     class, type, interface 를
-    다양한 타입으로 재사용 가능하게끔 하는 것
+    다양한 타입으로 재사용 가능하게끔 하는 키워드/개념
     
     =>  Generic
 */
@@ -56,8 +56,10 @@ showName(New_Mobile_2);
 
 generic 을 function 에 적용할 경우,
 
-function 에 들어가는 property 의 타입을
-유연하게 또 명시적으로 나열할 수 있다
+function 에 들어가는 변수의 타입을
+* 제한하거나
+* 유연하게 추가하여
+명시적으로 나열할 수 있다
 
-*/
+*/ 
 //# sourceMappingURL=index3.js.map

@@ -207,9 +207,28 @@ const admin: Omit<User, 'age'| 'gender'> = {
 
 // 'Exclude<T1,T2>' Keyword
 /*
+    ㄴ> 해당 utility 를 사용하면,
+        해당 type 에서의 type 들을,
 
+        선택적으로
+        type 을 제외해서 
+        instance 혹은 변수 의 type 을 제한해 줄 수 있다
 */
 
 type T1 = string | number | boolean
 type T2 = Exclude<T1, number >
 type T3 = Exclude<T1, number| string >
+
+
+
+
+
+
+
+// 'NonNullable<T>' Keyword
+/*
+    ㄴ> null & undefined 를 제외한 type 을 생성합니다
+*/
+
+type T4 = string | undefined | null
+type T5 = NonNullable<T4>
